@@ -15,3 +15,6 @@ C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTra
 C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\bin\Debug\CheckTracker.exe.config
 C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\obj\x86\Debug\CheckTracker.exe
 C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\obj\x86\Debug\CheckTracker.pdb
+C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\bin\Debug\CheckTracker.exe.config
+C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\obj\x86\Debug\CheckTracker.exe
+C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\obj\x86\Debug\CheckTracker.pdb
