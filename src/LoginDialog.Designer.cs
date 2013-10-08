@@ -31,8 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.userIdText = new System.Windows.Forms.TextBox();
+            this.pwdText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -46,8 +46,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.34767F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.userIdText, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pwdText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
@@ -77,22 +77,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
-            // textBox1
+            // userIdText
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 3);
-            this.textBox1.MaxLength = 255;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 2;
+            this.userIdText.Location = new System.Drawing.Point(120, 3);
+            this.userIdText.MaxLength = 255;
+            this.userIdText.Name = "userIdText";
+            this.userIdText.Size = new System.Drawing.Size(152, 20);
+            this.userIdText.TabIndex = 2;
             // 
-            // textBox2
+            // pwdText
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 36);
-            this.textBox2.MaxLength = 255;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 3;
+            this.pwdText.Location = new System.Drawing.Point(120, 36);
+            this.pwdText.MaxLength = 255;
+            this.pwdText.Name = "pwdText";
+            this.pwdText.PasswordChar = '*';
+            this.pwdText.Size = new System.Drawing.Size(152, 20);
+            this.pwdText.TabIndex = 3;
             // 
             // button1
             // 
@@ -111,6 +111,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginDialog
             // 
@@ -132,8 +133,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox userIdText;
+        private System.Windows.Forms.TextBox pwdText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
