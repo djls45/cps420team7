@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class LoginDialog : Form
+    public partial class LoginDialog : HistoryForm
     {
         public LoginDialog()
         {

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class Form2 : Form
+    public partial class HistoryForm : HistoryForm
     {
-        public Form2()
+        public HistoryForm()
         {
             InitializeComponent();
         }

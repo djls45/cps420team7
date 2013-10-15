@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class CheckDialog : HistoryForm
+    public partial class DatePicker : HistoryForm
     {
-        public CheckDialog()
+        public DatePicker()
         {
             InitializeComponent();
         }
-
     }
 }

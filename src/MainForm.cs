@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace CheckTracker
 {
-    public partial class MainForm : Form
+    public partial class MainForm : HistoryForm
     {
         public MainForm()
         {
