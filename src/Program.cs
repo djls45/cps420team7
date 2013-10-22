@@ -14,7 +14,7 @@ namespace CheckTracker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HistoryForm());
+            Application.Run(new LoginDialog());
         }
     }
 }

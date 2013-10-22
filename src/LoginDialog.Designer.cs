@@ -84,15 +84,18 @@
             this.userIdText.Name = "userIdText";
             this.userIdText.Size = new System.Drawing.Size(152, 20);
             this.userIdText.TabIndex = 2;
+            this.userIdText.Text = "Administrator";
             // 
             // pwdText
             // 
+            this.pwdText.Enabled = false;
             this.pwdText.Location = new System.Drawing.Point(120, 36);
             this.pwdText.MaxLength = 255;
             this.pwdText.Name = "pwdText";
             this.pwdText.PasswordChar = '*';
             this.pwdText.Size = new System.Drawing.Size(152, 20);
             this.pwdText.TabIndex = 3;
+            this.pwdText.Text = "************";
             // 
             // button1
             // 
@@ -102,6 +105,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 

@@ -81,23 +81,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CheckDialog.cs" />
+    <Compile Include="CheckDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CheckDialog.Designer.cs">
       <DependentUpon>CheckDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatePicker.cs" />
+    <Compile Include="DatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DatePicker.Designer.cs">
       <DependentUpon>DatePicker.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginDialog.cs" />
+    <Compile Include="LoginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginDialog.Designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckHistoryForm.cs" />
+    <Compile Include="CheckHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CheckHistoryForm.Designer.cs">
       <DependentUpon>CheckHistoryForm.cs</DependentUpon>
     </Compile>
@@ -117,9 +127,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>CheckHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

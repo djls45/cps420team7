@@ -9,11 +9,21 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class CheckDialog : HistoryForm
+    public partial class CheckDialog : Form
     {
         public CheckDialog()
         {
             InitializeComponent();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

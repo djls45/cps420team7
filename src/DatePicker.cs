@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class DatePicker : HistoryForm
+    public partial class DatePicker : Form
     {
         public DatePicker()
         {

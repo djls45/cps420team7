@@ -10,11 +10,10 @@ using System.Windows.Forms;
 using System.Data.Linq;
 using System.Data.Entity;
 using System.Data.Linq.Mapping;
-using System.Collections.Generic;
 
 namespace CheckTracker
 {
-    public partial class MainForm : HistoryForm
+    public partial class MainForm : Form
     {
         public MainForm()
         {
@@ -24,7 +23,7 @@ namespace CheckTracker
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'addressBookDataSet.AddressEntry' table. You can move, or remove it, as needed.
-            this.addressEntryTableAdapter.Fill(this.addressBookDataSet.AddressEntry);
+            //this.addressEntryTableAdapter.Fill(this.addressBookDataSet.AddressEntry);
 
         }
 
@@ -54,6 +53,12 @@ namespace CheckTracker
             {
                 //Set record's deleted flag
             }
+        }
+
+        private void viewHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryForm history = new HistoryForm();
+            history.ShowDialog();
         }
     }
 

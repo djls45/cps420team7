@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class LoginDialog : HistoryForm
+    public partial class LoginDialog : Form
     {
         public LoginDialog()
         {
@@ -20,6 +20,13 @@ namespace CheckTracker
         {
             pwdText.Clear();
             userIdText.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            this.Hide();
+            main.ShowDialog();
         }
     }
 }

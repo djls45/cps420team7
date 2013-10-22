@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CheckTracker
 {
-    public partial class HistoryForm : HistoryForm
+    public partial class HistoryForm : Form
     {
         public HistoryForm()
         {
