@@ -22,9 +22,12 @@ namespace CheckTracker
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Load size and location from config file and set form
+            this.Size = Properties.Settings.Default.MainFormSize;
+            this.Location = Properties.Settings.Default.MainFormLocation;
+
             // TODO: This line of code loads data into the 'addressBookDataSet.AddressEntry' table. You can move, or remove it, as needed.
             //this.addressEntryTableAdapter.Fill(this.addressBookDataSet.AddressEntry);
-
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,6 +62,20 @@ namespace CheckTracker
         {
             HistoryForm history = new HistoryForm();
             history.ShowDialog();
+        }
+
+        // When the form location is changed, save to user config file
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MainFormLocation = this.Location;
+            Properties.Settings.Default.Save();
+        }
+
+        // When the form size is changed, save to user config file
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MainFormSize = this.Size;
+            Properties.Settings.Default.Save();
         }
     }
 
