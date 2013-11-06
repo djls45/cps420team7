@@ -89,6 +89,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.okButton);
             this.Name = "DatePicker";
+            this.ShowIcon = false;
             this.Text = "DatePicker";
             this.ResumeLayout(false);
             this.PerformLayout();

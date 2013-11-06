@@ -124,6 +124,7 @@
             this.ClientSize = new System.Drawing.Size(333, 127);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LoginDialog";
+            this.ShowIcon = false;
             this.Text = "LoginDialog";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
