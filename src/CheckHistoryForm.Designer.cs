@@ -120,6 +120,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HistoryForm";
+            this.ShowIcon = false;
             this.Text = "CheckHistoryForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSetBindingSource)).EndInit();
