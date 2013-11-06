@@ -87,21 +87,157 @@ namespace CheckTracker
     [Table(Name = "Checks")]
     public class Check
     {
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
-        public int id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
 
         public string CheckNum { get; set; }
         public double Amount { get; set; }
         public string AmountLong { get; set; }
+
+        public string Passer { get; set; }
+        public string Address { get; set; }
+        public string Account { get; set; }
+
+        public char Status { get; set; }
+
+        public string Employee { get; set; }
+        public DateTime DateEntered { get; set; }
+
+    }
+
+    [Table(Name = "Accounts")]
+    public class Accounts
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
         public string AccountNum { get; set; }
+        public string RoutingNum { get; set; }
+        public string Owner { get; set; }
 
-        public int Passer { get; set; }
-        public int Address { get; set; }
-        public int Bank { get; set; }
+    }
 
-        public bool Deleted { get; set; }
-        public bool Paid { get; set; }
+    [Table(Name = "Addresses")]
+    public class Addresses
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string Street { get; set; }
+        public string AptNo { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
+        public string PostalCode { get; set; }
+        public string State { get; set; }
+
+    }
+
+    [Table(Name = "Banks")]
+    public class Banks
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string RoutingNum { get; set; }
+
+        public string Name { get; set; }
+        public string Location { get; set; }
+
+    }
+
+    [Table(Name = "Configurations")]
+    public class Configurations
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public double FeeAmt { get; set; }
+
+    }
+
+    [Table(Name = "Employees")]
+    public class Employees
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public char Type { get; set; }
+        public string Supervisor { get; set; }
+        public string Store { get; set; }
+        public string Login { get; set; }
+
+    }
+
+    [Table(Name = "Forms")]
+    public class Forms
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string Letter1 { get; set; }
+        public string Letter2 { get; set; }
+        public string Letter3 { get; set; }
+        public string Regulations { get; set; }
+        public string Notices { get; set; }
+
+    }
+
+    [Table(Name = "Logins")]
+    public class Logins
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public DateTime Date { get; set; }
+
+    }
+
+    [Table(Name = "Passers")]
+    public class Passers
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string FName { get; set; }
+        public string LName { get; set; }
+        public string Address { get; set; }
+
+    }
+
+    [Table(Name = "Phones")]
+    public class Phones
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string Number { get; set; }
+        public string Passer { get; set; }
+
+    }
+
+    [Table(Name = "Stores")]
+    public class Stores
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // required for non auto-generated PK
+        public string id { get; set; }
+
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public string Configuration { get; set; }
+        public string Forms { get; set; }
 
     }
 
