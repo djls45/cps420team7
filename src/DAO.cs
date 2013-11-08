@@ -158,6 +158,7 @@ namespace CheckTracker
 
         public string Username { get; set; }
         public string Password { get; set; }
+        //[Timestamp]
         public DateTime Date { get; set; }
 
     }
