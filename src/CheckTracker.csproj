@@ -87,6 +87,7 @@
     <Compile Include="CheckDialog.Designer.cs">
       <DependentUpon>CheckDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO.cs" />
     <Compile Include="DatePicker.cs">
       <SubType>Form</SubType>
     </Compile>
