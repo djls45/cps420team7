@@ -29,29 +29,28 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.firstNameBox = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.routingNumBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.accountNumBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.checkNumBox = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cityBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.recipientBox = new System.Windows.Forms.TextBox();
+            this.imageFileBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.amountBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.postalBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -59,6 +58,9 @@
             this.browseButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label10 = new System.Windows.Forms.Label();
+            this.stateBox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.aptBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,25 +69,25 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(170, 22);
+            this.label2.Location = new System.Drawing.Point(198, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Last Name*";
             // 
-            // textBox1
+            // firstNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 20);
-            this.textBox1.TabIndex = 0;
+            this.firstNameBox.Location = new System.Drawing.Point(91, 19);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.Size = new System.Drawing.Size(73, 20);
+            this.firstNameBox.TabIndex = 0;
             // 
-            // textBox2
+            // lastNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(238, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(54, 20);
-            this.textBox2.TabIndex = 1;
+            this.lastNameBox.Location = new System.Drawing.Point(266, 19);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(63, 20);
+            this.lastNameBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -101,7 +103,7 @@
             this.cancelButton.Location = new System.Drawing.Point(351, 396);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 19;
+            this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -111,7 +113,7 @@
             this.saveButton.Location = new System.Drawing.Point(270, 396);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 20;
+            this.saveButton.TabIndex = 4;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -125,12 +127,12 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Routing Number*";
             // 
-            // textBox6
+            // routingNumBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(100, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(79, 20);
-            this.textBox6.TabIndex = 2;
+            this.routingNumBox.Location = new System.Drawing.Point(100, 45);
+            this.routingNumBox.Name = "routingNumBox";
+            this.routingNumBox.Size = new System.Drawing.Size(79, 20);
+            this.routingNumBox.TabIndex = 2;
             // 
             // label7
             // 
@@ -141,12 +143,12 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Account Number*";
             // 
-            // textBox7
+            // accountNumBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(282, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(128, 20);
-            this.textBox7.TabIndex = 3;
+            this.accountNumBox.Location = new System.Drawing.Point(282, 45);
+            this.accountNumBox.Name = "accountNumBox";
+            this.accountNumBox.Size = new System.Drawing.Size(128, 20);
+            this.accountNumBox.TabIndex = 3;
             // 
             // label8
             // 
@@ -157,19 +159,19 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Check Number";
             // 
-            // textBox8
+            // checkNumBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(282, 19);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(54, 20);
-            this.textBox8.TabIndex = 1;
+            this.checkNumBox.Location = new System.Drawing.Point(282, 19);
+            this.checkNumBox.Name = "checkNumBox";
+            this.checkNumBox.Size = new System.Drawing.Size(54, 20);
+            this.checkNumBox.TabIndex = 1;
             // 
-            // textBox3
+            // addressBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(91, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(201, 20);
-            this.textBox3.TabIndex = 2;
+            this.addressBox.Location = new System.Drawing.Point(91, 45);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(166, 20);
+            this.addressBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -189,12 +191,12 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "City*";
             // 
-            // textBox4
+            // cityBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(91, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
-            this.textBox4.TabIndex = 3;
+            this.cityBox.Location = new System.Drawing.Point(91, 71);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.Size = new System.Drawing.Size(110, 20);
+            this.cityBox.TabIndex = 3;
             // 
             // label12
             // 
@@ -205,19 +207,19 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Recipient";
             // 
-            // textBox12
+            // recipientBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(100, 71);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(132, 20);
-            this.textBox12.TabIndex = 4;
+            this.recipientBox.Location = new System.Drawing.Point(100, 71);
+            this.recipientBox.Name = "recipientBox";
+            this.recipientBox.Size = new System.Drawing.Size(132, 20);
+            this.recipientBox.TabIndex = 4;
             // 
-            // textBox11
+            // imageFileBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(9, 19);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(239, 20);
-            this.textBox11.TabIndex = 0;
+            this.imageFileBox.Location = new System.Drawing.Point(9, 19);
+            this.imageFileBox.Name = "imageFileBox";
+            this.imageFileBox.Size = new System.Drawing.Size(239, 20);
+            this.imageFileBox.TabIndex = 0;
             // 
             // label9
             // 
@@ -228,12 +230,12 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "Amount*";
             // 
-            // textBox9
+            // amountBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(100, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(54, 20);
-            this.textBox9.TabIndex = 0;
+            this.amountBox.Location = new System.Drawing.Point(100, 19);
+            this.amountBox.Name = "amountBox";
+            this.amountBox.Size = new System.Drawing.Size(54, 20);
+            this.amountBox.TabIndex = 0;
             // 
             // label5
             // 
@@ -244,24 +246,17 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Postal Code*";
             // 
-            // textBox5
+            // postalBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(91, 97);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(54, 20);
-            this.textBox5.TabIndex = 5;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(254, 71);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(38, 20);
-            this.textBox13.TabIndex = 4;
+            this.postalBox.Location = new System.Drawing.Point(91, 97);
+            this.postalBox.Name = "postalBox";
+            this.postalBox.Size = new System.Drawing.Size(54, 20);
+            this.postalBox.TabIndex = 5;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(212, 74);
+            this.label13.Location = new System.Drawing.Point(220, 74);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 13);
             this.label13.TabIndex = 27;
@@ -269,52 +264,54 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.aptBox);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.stateBox);
+            this.groupBox1.Controls.Add(this.postalBox);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.lastNameBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.firstNameBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.addressBox);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.cityBox);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Location = new System.Drawing.Point(16, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(314, 125);
-            this.groupBox1.TabIndex = 28;
+            this.groupBox1.Size = new System.Drawing.Size(336, 125);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.amountBox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.recipientBox);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.checkNumBox);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.accountNumBox);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.routingNumBox);
             this.groupBox2.Location = new System.Drawing.Point(16, 191);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(418, 100);
-            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Check Information";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.browseButton);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.imageFileBox);
             this.groupBox3.Location = new System.Drawing.Point(16, 303);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(264, 82);
-            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Check Image File";
             // 
@@ -323,7 +320,7 @@
             this.browseButton.Location = new System.Drawing.Point(173, 45);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
-            this.browseButton.TabIndex = 24;
+            this.browseButton.TabIndex = 1;
             this.browseButton.Text = "Browse";
             this.browseButton.UseVisualStyleBackColor = true;
             // 
@@ -338,11 +335,89 @@
             this.label10.Location = new System.Drawing.Point(12, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(261, 29);
-            this.label10.TabIndex = 31;
+            this.label10.TabIndex = 0;
             this.label10.Text = "Check Information Dialog";
+            // 
+            // stateBox
+            // 
+            this.stateBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.stateBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.stateBox.FormattingEnabled = true;
+            this.stateBox.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.stateBox.Location = new System.Drawing.Point(262, 71);
+            this.stateBox.Name = "stateBox";
+            this.stateBox.Size = new System.Drawing.Size(36, 21);
+            this.stateBox.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(272, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Apt.";
+            // 
+            // aptBox
+            // 
+            this.aptBox.Location = new System.Drawing.Point(300, 44);
+            this.aptBox.Name = "aptBox";
+            this.aptBox.Size = new System.Drawing.Size(29, 20);
+            this.aptBox.TabIndex = 28;
             // 
             // CheckDialog
             // 
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -372,34 +447,36 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.TextBox textBox9;
-        public System.Windows.Forms.TextBox textBox11;
-        public System.Windows.Forms.TextBox textBox12;
-        public System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button browseButton;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button browseButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox addressBox;
+        public System.Windows.Forms.ComboBox stateBox;
+        public System.Windows.Forms.TextBox firstNameBox;
+        public System.Windows.Forms.TextBox lastNameBox;
+        public System.Windows.Forms.TextBox cityBox;
+        public System.Windows.Forms.TextBox postalBox;
+        public System.Windows.Forms.TextBox routingNumBox;
+        public System.Windows.Forms.TextBox accountNumBox;
+        public System.Windows.Forms.TextBox checkNumBox;
+        public System.Windows.Forms.TextBox amountBox;
+        public System.Windows.Forms.TextBox recipientBox;
+        public System.Windows.Forms.TextBox imageFileBox;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox aptBox;
     }
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
