@@ -1,4 +1,6 @@
 
+[Bb]in/*
+[Oo]bj/*
 src/CheckTracker.csproj.user
 src/CheckTracker.suo
 #ignore thumbnails created by windows
