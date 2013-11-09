@@ -33,11 +33,24 @@ namespace CheckTracker
                 Employees emp = new Employees();
                 Check ch = new Check();
                 //ch.property = textbox.text;
+
+                adr.Street = cd.addressBox.Text;
+                adr.City = cd.cityBox.Text;
+                adr.State = cd.stateBox.Text;
+                adr.PostalCode = cd.postalBox.Text;
+                adr.AptNo = cd.aptBox.Text;
+                p.FName = cd.firstNameBox.Text;
+                p.LName = cd.lastNameBox.Text;
+                p.Addresses = adr;
+                act.AccountNum = cd.accountNumBox.Text;
+                act.Passers = p;
+                act.RoutingNum = cd.routingNumBox.Text;
+
                 ch.Passers = p;
                 ch.Addresses = adr;
                 ch.Accounts = act;
                 ch.Employees = emp;
-                CheckDAO.Update(ch);
+                CheckDAO.Create(ch);
             }
         }
 
