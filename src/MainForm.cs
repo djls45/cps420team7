@@ -27,10 +27,16 @@ namespace CheckTracker
             CheckDialog cd = new CheckDialog();
             if (cd.ShowDialog() == DialogResult.OK)
             {
-                Addresses Address = new Addresses();
+                Passers p = new Passers();
+                Addresses adr = new Addresses();
+                Accounts act = new Accounts();
+                Employees emp = new Employees();
                 Check ch = new Check();
                 //ch.property = textbox.text;
-                ch.Addresses = Address;
+                ch.Passers = p;
+                ch.Addresses = adr;
+                ch.Accounts = act;
+                ch.Employees = emp;
                 CheckDAO.Update(ch);
             }
         }

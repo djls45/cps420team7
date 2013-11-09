@@ -47,6 +47,8 @@ namespace CheckTracker
 
         public DateTime DateEntered { get; set; }
 
+        public string Recipient { get; set; }
+
     }
 
     [System.Data.Linq.Mapping.Table(Name = "Accounts")]
@@ -229,7 +231,8 @@ namespace CheckTracker
     {
         public static List<Check> LoadAll()
         {
-            using (var db = new CheckTrackerContext("server=localhost;database=AddressBook;"))
+            //"server=localhost;database=AddressBook;"
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 // Define a LinQ Query
                 var query = from ae in db.Checks
@@ -248,7 +251,7 @@ namespace CheckTracker
 
         public static void Update(Check AE)
         {
-            using (var db = new CheckTrackerContext("server=localhost;database=AddressBook;"))
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Check record = db.Checks.Single(x => x.id == AE.id);
                 //record.CheckNum = AE.CheckNum;
@@ -256,6 +259,7 @@ namespace CheckTracker
                 //record.AmountLong = AE.AmountLong;
                 //record.Status = AE.Status;
                 //record.DateEntered = AE.DateEntered;
+                //record.Recipient = AE.Recipient;
 
                 //record.Passer = AE.Passer;
                 ////record.Passers = AE.Passers;
@@ -274,7 +278,7 @@ namespace CheckTracker
 
         public static void Create(Check AE)
         {
-            using (var db = new CheckTrackerContext("server=localhost;database=AddressBook;"))
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 db.Checks.Add(AE);
                 db.SaveChanges();
@@ -284,7 +288,7 @@ namespace CheckTracker
 
         public static void Delete(Check AE)
         {
-            using (var db = new CheckTrackerContext("server=localhost;database=AddressBook;"))
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Check record = db.Checks.Single(x => x.id == AE.id);
                 //db.Checks.Remove(record);
