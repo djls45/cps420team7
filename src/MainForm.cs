@@ -28,9 +28,28 @@ namespace CheckTracker
             if (cd.ShowDialog() == DialogResult.OK)
             {
                 Addresses Address = new Addresses();
+                Address.Street = cd.textBox3.Text;
+                Address.City = cd.textBox4.Text;
+                Address.State = cd.textBox13.Text;
+                Address.PostalCode = cd.textBox5.Text;
+
+                Passers Passer = new Passers();
+                Passer.FName = cd.textBox1.Text;
+                Passer.LName = cd.textBox2.Text;
+
+                Accounts Account = new Accounts();
+                Account.RoutingNum = cd.textBox6.Text;
+                Account.AccountNum = cd.textBox7.Text;
+
                 Check ch = new Check();
-                //ch.property = textbox.text;
                 ch.Addresses = Address;
+                ch.Passers = Passer;
+                ch.Accounts = Account;
+                ch.CheckNum = cd.textBox8.Text;
+                ch.Amount = Convert.ToDecimal(cd.textBox9.Text);
+                ch.Recipient = cd.textBox12.Text;
+                ch.ImageFile = cd.textBox11.Text;
+
                 CheckDAO.Update(ch);
             }
         }
