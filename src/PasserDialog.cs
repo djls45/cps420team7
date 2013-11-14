@@ -18,6 +18,7 @@ namespace CheckTracker
             InitializeComponent();
             Passer = new Passer();
             LoadAddresses();
+            AddressChoice.SelectedIndex = 0;
         }
 
         public PasserDialog(Passer p)
@@ -27,6 +28,7 @@ namespace CheckTracker
             firstNameBox.Text = p.FName;
             lastNameBox.Text = p.LName;
             LoadAddresses();
+            AddressChoice.SelectedIndex = 0;
         }
 
         new public DialogResult ShowDialog()
@@ -38,7 +40,7 @@ namespace CheckTracker
 
         private void LoadAddresses()
         {
-            List<Address> LA = CheckDAO.LoadAllAddresses();
+            List<Address> LA = AddressDAO.LoadAllAddresses();
             AddressChoice.Items.Clear();
             if (LA != null)
             {
@@ -48,7 +50,6 @@ namespace CheckTracker
                 }
             }
             AddressChoice.Items.Insert(0, "-- Create New --");
-            AddressChoice.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

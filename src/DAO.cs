@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Linq;
+using System.Data.Entity.Infrastructure;
 
 
 namespace CheckTracker
@@ -210,10 +211,11 @@ namespace CheckTracker
 
     }
 
-    class CheckTrackerContext : DbContext
+    public class CheckTrackerContext : DbContext
     {
         // Constructor: provides connection string <connStr> to superclass constructor
         public CheckTrackerContext(string connStr) : base(connStr) { }
+        public CheckTrackerContext() : base() { }
 
         public DbSet<Check> Checks { get; set; }
         public DbSet<Account> Accounts { get; set; }
@@ -227,6 +229,13 @@ namespace CheckTracker
         public DbSet<Stores> Stores { get; set; }
     }
 
+    public class CheckTrackerContextFactory : IDbContextFactory<CheckTrackerContext>
+    {
+        public CheckTrackerContext Create()
+        {
+            return new CheckTrackerContext("CheckTrackerConnectionString");
+        }
+    }
     class CheckDAO
     {
         ////////// Checks //////////
@@ -287,7 +296,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class AccountDAO
+    {
         ////////// Accounts //////////
         public static List<Account> LoadAllAccounts()
         {
@@ -345,7 +357,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class AddressDAO
+    {
         ////////// Addresses //////////
         public static List<Address> LoadAllAddresses()
         {
@@ -403,7 +418,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class BankDAO
+    {
         ////////// Banks //////////
         public static List<Bank> LoadAllBanks()
         {
@@ -461,7 +479,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class ConfigDAO
+    {
         ////////// Configurations //////////
         public static List<Configuration> LoadAllConfigs()
         {
@@ -519,7 +540,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class EmployeeDAO
+    {
         ////////// Employees //////////
         public static List<Employee> LoadAllEmployees()
         {
@@ -577,7 +601,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class FormsDAO
+    {
         ////////// Forms //////////
         public static List<Forms> LoadAllForms()
         {
@@ -635,7 +662,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class LoginDAO
+    {
         ////////// Logins //////////
         public static List<Login> LoadAllLogins()
         {
@@ -708,7 +738,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class PasserDAO
+    {
         ////////// Passers //////////
         public static List<Passer> LoadAllPassers()
         {
@@ -766,7 +799,10 @@ namespace CheckTracker
                 return;
             }
         }
+    }
 
+    class StoreDAO
+    {
         ////////// Stores //////////
         public static List<Stores> LoadAllStores()
         {

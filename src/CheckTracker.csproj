@@ -135,6 +135,7 @@
     <Compile Include="CheckHistoryForm.Designer.cs">
       <DependentUpon>CheckHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PasserDialog.cs">
       <SubType>Form</SubType>
     </Compile>

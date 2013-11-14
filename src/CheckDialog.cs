@@ -11,17 +11,48 @@ namespace CheckTracker
 {
     public partial class CheckDialog : Form
     {
+        public Check Check;
+
         public CheckDialog()
         {
             InitializeComponent();
             LoadPassers();
+            PasserChoice.SelectedIndex = 0;
             LoadAddresses();
+            AddressChoice.SelectedIndex = 0;
             LoadAccounts();
+            AccountChoice.SelectedIndex = 0;
+            Check = new Check();
+            LoadCheckData();
+        }
+
+        public CheckDialog(Check c)
+        {
+            InitializeComponent();
+            LoadPassers();
+            PasserChoice.SelectedIndex = 0;
+            LoadAddresses();
+            AddressChoice.SelectedIndex = 0;
+            LoadAccounts();
+            AccountChoice.SelectedIndex = 0;
+            Check = c;
+            LoadCheckData();
+        }
+
+        private void LoadCheckData()
+        {
+            amountBox.Text = Check.Amount.ToString();
+            checkNumBox.Text = Check.CheckNum;
+            LongAmountText.Text = Check.AmountLong;
+            imageFileBox.Text = Check.ImageFile;
+            recipientBox.Text = Check.Recipient;
+
+            //comboboxes...
         }
 
         private void LoadPassers()
         {
-            List<Passer> LA = CheckDAO.LoadAllPassers();
+            List<Passer> LA = PasserDAO.LoadAllPassers();
             PasserChoice.Items.Clear();
             if (LA != null)
             {
@@ -31,12 +62,11 @@ namespace CheckTracker
                 }
             }
             PasserChoice.Items.Insert(0, "-- Create New --");
-            PasserChoice.SelectedIndex = 0;
         }
 
         private void LoadAddresses()
         {
-            List<Address> LA = CheckDAO.LoadAllAddresses();
+            List<Address> LA = AddressDAO.LoadAllAddresses();
             AddressChoice.Items.Clear();
             if (LA != null)
             {
@@ -46,12 +76,11 @@ namespace CheckTracker
                 }
             }
             AddressChoice.Items.Insert(0, "-- Create New --");
-            AddressChoice.SelectedIndex = 0;
         }
 
         private void LoadAccounts()
         {
-            List<Account> LA = CheckDAO.LoadAllAccounts();
+            List<Account> LA = AccountDAO.LoadAllAccounts();
             AccountChoice.Items.Clear();
             if (LA != null)
             {
@@ -61,11 +90,18 @@ namespace CheckTracker
                 }
             }
             AccountChoice.Items.Insert(0, "-- Create New --");
-            AccountChoice.SelectedIndex = 0;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            Check.CheckNum = checkNumBox.Text;
+            Check.Amount = Convert.ToDecimal(amountBox.Text);
+            Check.AmountLong = LongAmountText.Text;
+            Check.Recipient = recipientBox.Text;
+            Check.ImageFile = imageFileBox.Text;
+
+            //comboboxes...
+
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
@@ -89,7 +125,7 @@ namespace CheckTracker
             }
             if (pd.ShowDialog() == DialogResult.OK)
             {
-                CheckDAO.Update(pd.Passer);
+                PasserDAO.Update(pd.Passer);
             }
             LoadPassers();
         }
@@ -107,7 +143,7 @@ namespace CheckTracker
             }
             if (af.ShowDialog() == DialogResult.OK)
             {
-                CheckDAO.Update(af.Address);
+                AddressDAO.Update(af.Address);
             }
             LoadAddresses();
         }
@@ -125,7 +161,7 @@ namespace CheckTracker
             }
             if (af.ShowDialog() == DialogResult.OK)
             {
-                CheckDAO.Update(af.Account);
+                AccountDAO.Update(af.Account);
             }
             LoadAccounts();
         }

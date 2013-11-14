@@ -31,7 +31,7 @@ namespace CheckTracker
 
         private void LoadAddresses()
         {
-            List<Address> LA = CheckDAO.LoadAllAddresses();
+            List<Address> LA = AddressDAO.LoadAllAddresses();
             AddressChoice.Items.Clear();
             if (LA != null)
             {
@@ -69,7 +69,7 @@ namespace CheckTracker
             }
             if (af.ShowDialog() == DialogResult.OK)
             {
-                CheckDAO.Update(af.Address);
+                AddressDAO.Update(af.Address);
             }
             LoadAddresses();
         }

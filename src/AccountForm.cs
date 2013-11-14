@@ -32,7 +32,7 @@ namespace CheckTracker
 
         private void LoadBanks()
         {
-            List<Bank> LA = CheckDAO.LoadAllBanks();
+            List<Bank> LA = BankDAO.LoadAllBanks();
             BankChoice.Items.Clear();
             if (LA != null)
             {
@@ -47,7 +47,7 @@ namespace CheckTracker
 
         private void LoadOwners()
         {
-            List<Passer> LA = CheckDAO.LoadAllPassers();
+            List<Passer> LA = PasserDAO.LoadAllPassers();
             OwnerChoice.Items.Clear();
             if (LA != null)
             {
@@ -73,7 +73,7 @@ namespace CheckTracker
             }
             if (pd.ShowDialog() == DialogResult.OK)
             {
-                CheckDAO.Update(pd.Passer);
+                PasserDAO.Update(pd.Passer);
             }
             LoadOwners();
         }
