@@ -86,6 +86,10 @@ namespace CheckTracker
         public string State { get; set; }
         public string Phone { get; set; }
 
+        new public string ToString()
+        {
+            return Street + " " + AptNo + ", " + City + ", " + State + ", " + PostalCode + " (" + Phone + ")";
+        }
     }
 
     [System.Data.Linq.Mapping.Table(Name = "Banks")]
@@ -225,7 +229,8 @@ namespace CheckTracker
 
     class CheckDAO
     {
-        public static List<Check> LoadAll()
+        ////////// Checks //////////
+        public static List<Check> LoadAllChecks()
         {
             // "server=localhost;database=AddressBook;"
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
@@ -251,7 +256,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Check record = db.Checks.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -281,7 +288,6 @@ namespace CheckTracker
             }
         }
 
-
         ////////// Accounts //////////
         public static List<Account> LoadAllAccounts()
         {
@@ -309,7 +315,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Account record = db.Accounts.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -333,6 +341,64 @@ namespace CheckTracker
             {
                 Account record = db.Accounts.Single(x => x.id == AE.id);
                 db.Accounts.Remove(record);
+                db.SaveChanges();
+                return;
+            }
+        }
+
+        ////////// Addresses //////////
+        public static List<Address> LoadAllAddresses()
+        {
+            // "server=localhost;database=AddressBook;"
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
+            {
+                // Define a LinQ Query
+                var query = from ae in db.Addresses
+                            select ae;
+
+                // Execute the query
+                var results = query.ToList();
+                List<Address> AEList = null;
+
+                foreach (Address ae in results)
+                    AEList.Add(ae);
+
+                return AEList;
+            }
+        }
+
+        public static void Update(Address AE)
+        {
+            // "server=localhost;database=AddressBook;"
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
+            {
+                Address record = db.Addresses.Single(x => x.id == AE.id);
+                Guid g = record.id;
+                record = AE;
+                record.id = g;
+                db.SaveChanges();
+                return;
+            }
+        }
+
+        public static void Create(Address AE)
+        {
+            // "server=localhost;database=AddressBook;"
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
+            {
+                db.Addresses.Add(AE);
+                db.SaveChanges();
+                return;
+            }
+        }
+
+        public static void Delete(Address AE)
+        {
+            // "server=localhost;database=AddressBook;"
+            using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
+            {
+                Address record = db.Addresses.Single(x => x.id == AE.id);
+                db.Addresses.Remove(record);
                 db.SaveChanges();
                 return;
             }
@@ -365,7 +431,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Bank record = db.Banks.Single(x => x.RoutingNum == AE.RoutingNum);
+                string id = record.RoutingNum;
                 record = AE;
+                record.RoutingNum = id;
                 db.SaveChanges();
                 return;
             }
@@ -421,7 +489,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Configuration record = db.Configurations.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -477,7 +547,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Employee record = db.Employees.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -533,7 +605,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Forms record = db.Forms.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -603,6 +677,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Login record = db.Logins.Single(x => x.id == AE.id);
+                //AE.Date = DateTime.Now;
+                //AE.id = Guid.NewGuid();
+                //db.Logins.Add(AE);
                 record = AE;
                 db.SaveChanges();
                 return;
@@ -659,7 +736,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Passer record = db.Passers.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }
@@ -715,7 +794,9 @@ namespace CheckTracker
             using (var db = new CheckTrackerContext("CheckTrackerConnectionString"))
             {
                 Stores record = db.Stores.Single(x => x.id == AE.id);
+                Guid g = record.id;
                 record = AE;
+                record.id = g;
                 db.SaveChanges();
                 return;
             }

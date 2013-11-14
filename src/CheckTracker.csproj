@@ -76,10 +76,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddressBookDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AddressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressForm.Designer.cs">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BankForm.Designer.cs">
+      <DependentUpon>BankForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckDialog.cs">
       <SubType>Form</SubType>
@@ -112,8 +130,23 @@
     <Compile Include="CheckHistoryForm.Designer.cs">
       <DependentUpon>CheckHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasserDialog.Designer.cs">
+      <DependentUpon>PasserDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddressForm.resx">
+      <DependentUpon>AddressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BankForm.resx">
+      <DependentUpon>BankForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckDialog.resx">
       <DependentUpon>CheckDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasserDialog.resx">
+      <DependentUpon>PasserDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
