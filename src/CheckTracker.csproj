@@ -99,6 +99,11 @@
     <Compile Include="BankForm.Designer.cs">
       <DependentUpon>BankForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CheckDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +192,17 @@
     </None>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="CheckDataSet.xsc">
+      <DependentUpon>CheckDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CheckDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CheckDataSet.xss">
+      <DependentUpon>CheckDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

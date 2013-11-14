@@ -46,13 +46,28 @@
             this.addressEntryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressBookDataSet = new CheckTracker.AddressBookDataSet();
             this.addressEntryTableAdapter = new CheckTracker.AddressBookDataSetTableAdapters.AddressEntryTableAdapter();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.checkDataSet = new CheckTracker.CheckDataSet();
+            this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checksTableAdapter = new CheckTracker.CheckDataSetTableAdapters.ChecksTableAdapter();
+            this.checkNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateEnteredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageFileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressEntryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -63,7 +78,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,8 +158,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(284, 238);
-            this.splitContainer1.SplitterDistance = 94;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Size = new System.Drawing.Size(744, 259);
+            this.splitContainer1.SplitterDistance = 63;
             this.splitContainer1.TabIndex = 1;
             // 
             // dataGridView1
@@ -159,7 +178,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(284, 94);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 63);
             this.dataGridView1.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn
@@ -188,11 +207,90 @@
             // 
             this.addressEntryTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.checkNumDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.employeeDataGridViewTextBoxColumn,
+            this.dateEnteredDataGridViewTextBoxColumn,
+            this.recipientDataGridViewTextBoxColumn,
+            this.imageFileDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.checksBindingSource;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(744, 192);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // checkDataSet
+            // 
+            this.checkDataSet.DataSetName = "CheckDataSet";
+            this.checkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // checksBindingSource
+            // 
+            this.checksBindingSource.DataMember = "Checks";
+            this.checksBindingSource.DataSource = this.checkDataSet;
+            // 
+            // checksTableAdapter
+            // 
+            this.checksTableAdapter.ClearBeforeFill = true;
+            // 
+            // checkNumDataGridViewTextBoxColumn
+            // 
+            this.checkNumDataGridViewTextBoxColumn.DataPropertyName = "CheckNum";
+            this.checkNumDataGridViewTextBoxColumn.HeaderText = "CheckNum";
+            this.checkNumDataGridViewTextBoxColumn.Name = "checkNumDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // employeeDataGridViewTextBoxColumn
+            // 
+            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
+            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            // 
+            // dateEnteredDataGridViewTextBoxColumn
+            // 
+            this.dateEnteredDataGridViewTextBoxColumn.DataPropertyName = "DateEntered";
+            this.dateEnteredDataGridViewTextBoxColumn.HeaderText = "DateEntered";
+            this.dateEnteredDataGridViewTextBoxColumn.Name = "dateEnteredDataGridViewTextBoxColumn";
+            // 
+            // recipientDataGridViewTextBoxColumn
+            // 
+            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "Recipient";
+            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
+            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
+            // 
+            // imageFileDataGridViewTextBoxColumn
+            // 
+            this.imageFileDataGridViewTextBoxColumn.DataPropertyName = "ImageFile";
+            this.imageFileDataGridViewTextBoxColumn.HeaderText = "ImageFile";
+            this.imageFileDataGridViewTextBoxColumn.Name = "imageFileDataGridViewTextBoxColumn";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(744, 283);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -205,11 +303,15 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressEntryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +336,17 @@
         private System.Windows.Forms.ToolStripMenuItem viewHistoryToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private CheckDataSet checkDataSet;
+        private System.Windows.Forms.BindingSource checksBindingSource;
+        private CheckDataSetTableAdapters.ChecksTableAdapter checksTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn checkNumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateEnteredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recipientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imageFileDataGridViewTextBoxColumn;
     }
 }
 
