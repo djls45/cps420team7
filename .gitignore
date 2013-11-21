@@ -1,5 +1,7 @@
 
+src/[Bb]in/*
 [Bb]in/*
+src/[Oo]bj/*
 [Oo]bj/*
 src/CheckTracker.csproj.user
 src/CheckTracker.suo

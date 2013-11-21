@@ -104,7 +104,9 @@ namespace CheckTracker
 
     public class Bank
     {
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int id { get; set; }
+        [Required]
         public string RoutingNum { get; set; }
         [Required]
         public string Name { get; set; }
