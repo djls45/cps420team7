@@ -66,14 +66,18 @@ namespace CheckTracker
             if (OwnerChoice.SelectedIndex != 0)
             {
                 pd = new PasserDialog((Passer)OwnerChoice.SelectedItem);
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    PasserDAO.Update(pd.Passer);
+                }
             }
             else
             {
                 pd = new PasserDialog();
-            }
-            if (pd.ShowDialog() == DialogResult.OK)
-            {
-                PasserDAO.Update(pd.Passer);
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    PasserDAO.Create(pd.Passer);
+                }
             }
             LoadOwners();
         }
@@ -96,14 +100,18 @@ namespace CheckTracker
             if (BankChoice.SelectedIndex != 0)
             {
                 af = new BankForm((Bank)BankChoice.SelectedItem);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    BankDAO.Update(af.Bank);
+                }
             }
             else
             {
                 af = new BankForm();
-            }
-            if (af.ShowDialog() == DialogResult.OK)
-            {
-                //CheckDAO.Update(af.Bank);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    BankDAO.Create(af.Bank);
+                }
             }
             LoadBanks();
         }

@@ -1,20 +1,23 @@
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\AddressBook.sdf
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\CheckTracker.exe.config
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\CheckTracker.exe
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\CheckTracker.pdb
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.Form1.resources
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.Properties.Resources.resources
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.csproj.GenerateResource.Cache
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.exe
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.pdb
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.csprojResolveAssemblyReference.cache
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\EntityFramework.dll
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\System.Data.SqlServerCe.dll
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\System.Data.SqlServerCe.Entity.dll
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\CheckTracker\bin\Debug\EntityFramework.xml
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\bin\Debug\CheckTracker.exe.config
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\obj\x86\Debug\CheckTracker.exe
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\cps420team7\src\CheckTracker\obj\x86\Debug\CheckTracker.pdb
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\bin\Debug\CheckTracker.exe.config
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\obj\x86\Debug\CheckTracker.exe
-C:\Users\Jed\Desktop\classes\1 CpS420 Software Dev\project\CheckTracker\cps420team7\src\obj\x86\Debug\CheckTracker.pdb
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\CheckTracker.exe.config
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\CheckTracker.exe
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\CheckTracker.pdb
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.dll
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.SqlServer.dll
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\System.Data.SqlServerCe.dll
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.xml
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.SqlServer.xml
+C:\code\projects\CheckTracker\CheckTracker\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.MainForm.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.Properties.Resources.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.csproj.GenerateResource.Cache
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.exe
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.pdb
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.AccountForm.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.AddressForm.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.BankForm.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.CheckDialog.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.HistoryForm.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.DatePicker.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.LoginDialog.resources
+C:\code\projects\CheckTracker\CheckTracker\obj\x86\Debug\CheckTracker.PasserDialog.resources

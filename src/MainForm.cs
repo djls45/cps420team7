@@ -14,8 +14,6 @@ namespace CheckTracker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'checkDataSet.Checks' table. You can move, or remove it, as needed.
-            this.checksTableAdapter.Fill(this.checkDataSet.Checks);
             // Load size and location from config file and set form
             this.Size = Properties.Settings.Default.MainFormSize;
             this.Location = Properties.Settings.Default.MainFormLocation;
@@ -29,31 +27,17 @@ namespace CheckTracker
             {
                 // set all attributes
 
-                //Address adr = new Address();
-                //adr.Street = cd.addressBox.Text;
-                //adr.City = cd.cityBox.Text;
-                //adr.State = cd.stateBox.Text;
-                //adr.PostalCode = cd.postalBox.Text;
-                //adr.AptNo = cd.aptBox.Text;
-
-                //Passer p = new Passer();
-                //p.FName = cd.firstNameBox.Text;
-                //p.LName = cd.lastNameBox.Text;
-                //p.Addresses = adr;
-
-                //Account act = new Account();
-                //act.AccountNum = cd.accountNumBox.Text;
-                //act.Passers = p;
-                //act.RoutingNum = cd.routingNumBox.Text;
-
-                //Employee emp = new Employee();
-
                 Check ch = new Check();
                 ch.DateEntered = DateTime.Now;
                 //ch.Passers = p;
                 //ch.Addresses = adr;
                 //ch.Accounts = act;
                 //ch.Employees = emp;
+                ch.Amount = Convert.ToDecimal(cd.amountBox.Text);
+                ch.Status = '1';
+                ch.Account = ((Account)cd.AccountChoice.SelectedItem).id;
+                ch.Employee = 0;
+                ch.DateEntered = DateTime.Now;
 
                 CheckDAO.Create(ch);
             }

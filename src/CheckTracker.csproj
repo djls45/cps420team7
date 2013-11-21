@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{12A84225-5220-47B8-B0B3-03E03B3CDE0B}</ProjectGuid>
+    <ProjectGuid>{94F17AA6-BDD3-4F7B-838E-2E886F6AB298}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CheckTracker</RootNamespace>
@@ -13,21 +13,6 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -49,22 +34,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact">
+      <HintPath>packages\EntityFramework.SqlServerCompact.6.0.1\lib\net40\EntityFramework.SqlServerCompact.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>packages\EntityFramework.SqlServerCompact.4.3.6\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,48 +64,45 @@
     <Compile Include="AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountForm.Designer.cs">
+    <Compile Include="AccountForm.designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddressBookDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AddressForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddressForm.Designer.cs">
+    <Compile Include="AddressForm.designer.cs">
       <DependentUpon>AddressForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BankForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BankForm.Designer.cs">
+    <Compile Include="BankForm.designer.cs">
       <DependentUpon>BankForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Check.cs" />
+    <Compile Include="CheckDAL.cs" />
     <Compile Include="CheckDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckDialog.Designer.cs">
+    <Compile Include="CheckDialog.designer.cs">
       <DependentUpon>CheckDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO.cs" />
+    <Compile Include="CheckHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckHistoryForm.designer.cs">
+      <DependentUpon>CheckHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatePicker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatePicker.Designer.cs">
+    <Compile Include="DatePicker.designer.cs">
       <DependentUpon>DatePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDialog.Designer.cs">
+    <Compile Include="LoginDialog.designer.cs">
       <DependentUpon>LoginDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -129,17 +111,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckHistoryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CheckHistoryForm.Designer.cs">
-      <DependentUpon>CheckHistoryForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PasserDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasserDialog.Designer.cs">
+    <Compile Include="PasserDialog.designer.cs">
       <DependentUpon>PasserDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -180,31 +155,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="AddressBookDataSet.xsc">
-      <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AddressBookDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AddressBookDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AddressBookDataSet.xss">
-      <DependentUpon>AddressBookDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CheckDataSet.xsc">
-      <DependentUpon>CheckDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CheckDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CheckDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CheckDataSet.xss">
-      <DependentUpon>CheckDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,38 +166,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AddressBook.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
-      <Visible>False</Visible>
-      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
-      <Visible>False</Visible>
-      <ProductName>Windows Installer 3.1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

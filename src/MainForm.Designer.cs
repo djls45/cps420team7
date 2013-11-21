@@ -40,29 +40,14 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.addressEntryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addressBookDataSet = new CheckTracker.AddressBookDataSet();
-            this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkDataSet = new CheckTracker.CheckDataSet();
-            this.addressEntryTableAdapter = new CheckTracker.AddressBookDataSetTableAdapters.AddressEntryTableAdapter();
-            this.checksTableAdapter = new CheckTracker.CheckDataSetTableAdapters.ChecksTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.checkNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEnteredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recipientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageFileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addressEntryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -157,49 +142,11 @@
             this.splitContainer1.SplitterDistance = 189;
             this.splitContainer1.TabIndex = 1;
             // 
-            // addressEntryBindingSource
-            // 
-            this.addressEntryBindingSource.DataMember = "AddressEntry";
-            this.addressEntryBindingSource.DataSource = this.addressBookDataSet;
-            // 
-            // addressBookDataSet
-            // 
-            this.addressBookDataSet.DataSetName = "AddressBookDataSet";
-            this.addressBookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // checksBindingSource
-            // 
-            this.checksBindingSource.DataMember = "Checks";
-            this.checksBindingSource.DataSource = this.checkDataSet;
-            // 
-            // checkDataSet
-            // 
-            this.checkDataSet.DataSetName = "CheckDataSet";
-            this.checkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addressEntryTableAdapter
-            // 
-            this.addressEntryTableAdapter.ClearBeforeFill = true;
-            // 
-            // checksTableAdapter
-            // 
-            this.checksTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkNumDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.employeeDataGridViewTextBoxColumn,
-            this.dateEnteredDataGridViewTextBoxColumn,
-            this.recipientDataGridViewTextBoxColumn,
-            this.imageFileDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.checksBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
@@ -207,47 +154,9 @@
             this.dataGridView2.Size = new System.Drawing.Size(744, 189);
             this.dataGridView2.TabIndex = 1;
             // 
-            // checkNumDataGridViewTextBoxColumn
+            // checksBindingSource
             // 
-            this.checkNumDataGridViewTextBoxColumn.DataPropertyName = "CheckNum";
-            this.checkNumDataGridViewTextBoxColumn.HeaderText = "CheckNum";
-            this.checkNumDataGridViewTextBoxColumn.Name = "checkNumDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // employeeDataGridViewTextBoxColumn
-            // 
-            this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
-            this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
-            this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
-            // 
-            // dateEnteredDataGridViewTextBoxColumn
-            // 
-            this.dateEnteredDataGridViewTextBoxColumn.DataPropertyName = "DateEntered";
-            this.dateEnteredDataGridViewTextBoxColumn.HeaderText = "DateEntered";
-            this.dateEnteredDataGridViewTextBoxColumn.Name = "dateEnteredDataGridViewTextBoxColumn";
-            // 
-            // recipientDataGridViewTextBoxColumn
-            // 
-            this.recipientDataGridViewTextBoxColumn.DataPropertyName = "Recipient";
-            this.recipientDataGridViewTextBoxColumn.HeaderText = "Recipient";
-            this.recipientDataGridViewTextBoxColumn.Name = "recipientDataGridViewTextBoxColumn";
-            // 
-            // imageFileDataGridViewTextBoxColumn
-            // 
-            this.imageFileDataGridViewTextBoxColumn.DataPropertyName = "ImageFile";
-            this.imageFileDataGridViewTextBoxColumn.HeaderText = "ImageFile";
-            this.imageFileDataGridViewTextBoxColumn.Name = "imageFileDataGridViewTextBoxColumn";
+            this.checksBindingSource.DataMember = "Checks";
             // 
             // MainForm
             // 
@@ -268,11 +177,8 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.addressEntryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,16 +193,11 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private AddressBookDataSet addressBookDataSet;
-        private System.Windows.Forms.BindingSource addressEntryBindingSource;
-        private AddressBookDataSetTableAdapters.AddressEntryTableAdapter addressEntryTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHistoryToolStripMenuItem;
-        private CheckDataSet checkDataSet;
         private System.Windows.Forms.BindingSource checksBindingSource;
-        private CheckDataSetTableAdapters.ChecksTableAdapter checksTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;

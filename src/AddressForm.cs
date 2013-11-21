@@ -42,8 +42,6 @@ namespace CheckTracker
             Address.City = cityBox.Text;
             Address.State = stateBox.Text;
             Address.PostalCode = postalBox.Text;
-            if (Address.id == null)
-                Address.id = Guid.NewGuid();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }

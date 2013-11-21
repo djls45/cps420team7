@@ -73,14 +73,18 @@ namespace CheckTracker
             if (AddressChoice.SelectedIndex != 0)
             {
                 af = new AddressForm((Address)AddressChoice.SelectedItem);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AddressDAO.Update(af.Address);
+                }
             }
             else
             {
                 af = new AddressForm();
-            }
-            if (af.ShowDialog() == DialogResult.OK)
-            {
-                //CheckDAO.Update(af.Address);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AddressDAO.Create(af.Address);
+                }
             }
             LoadAddresses();
         }

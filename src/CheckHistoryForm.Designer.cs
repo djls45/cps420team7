@@ -34,13 +34,11 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressBookDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addressBookDataSet = new CheckTracker.AddressBookDataSet();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.selectDatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +69,6 @@
             // 
             this.Column3.HeaderText = "Date Entered";
             this.Column3.Name = "Column3";
-            // 
-            // addressBookDataSetBindingSource
-            // 
-            this.addressBookDataSetBindingSource.DataSource = this.addressBookDataSet;
-            this.addressBookDataSetBindingSource.Position = 0;
-            // 
-            // addressBookDataSet
-            // 
-            this.addressBookDataSet.DataSetName = "AddressBookDataSet";
-            this.addressBookDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -124,7 +112,6 @@
             this.Text = "CheckHistoryForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressBookDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -136,7 +123,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource addressBookDataSetBindingSource;
-        private AddressBookDataSet addressBookDataSet;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem selectDatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;

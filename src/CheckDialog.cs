@@ -118,14 +118,18 @@ namespace CheckTracker
             if (PasserChoice.SelectedIndex != 0)
             {
                 pd = new PasserDialog((Passer)PasserChoice.SelectedItem);
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    PasserDAO.Update(pd.Passer);
+                }
             }
             else
             {
                 pd = new PasserDialog();
-            }
-            if (pd.ShowDialog() == DialogResult.OK)
-            {
-                PasserDAO.Update(pd.Passer);
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    PasserDAO.Create(pd.Passer);
+                }
             }
             LoadPassers();
         }
@@ -136,14 +140,18 @@ namespace CheckTracker
             if (AddressChoice.SelectedIndex != 0)
             {
                 af = new AddressForm((Address)AddressChoice.SelectedItem);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AddressDAO.Update(af.Address);
+                }
             }
             else
             {
                 af = new AddressForm();
-            }
-            if (af.ShowDialog() == DialogResult.OK)
-            {
-                AddressDAO.Update(af.Address);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AddressDAO.Create(af.Address);
+                }
             }
             LoadAddresses();
         }
@@ -154,14 +162,18 @@ namespace CheckTracker
             if (AccountChoice.SelectedIndex != 0)
             {
                 af = new AccountForm((Account)AccountChoice.SelectedItem);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AccountDAO.Update(af.Account);
+                }
             }
             else
             {
                 af = new AccountForm();
-            }
-            if (af.ShowDialog() == DialogResult.OK)
-            {
-                AccountDAO.Update(af.Account);
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    AccountDAO.Create(af.Account);
+                }
             }
             LoadAccounts();
         }
