@@ -9,6 +9,11 @@ namespace CheckTracker
 {
     public class CheckContext : DbContext
     {
+        public CheckContext() : base()
+        {
+            Database.SetInitializer<CheckContext>(new DbInitializer());
+        }
+
         public DbSet<Check> Checks { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
@@ -21,6 +26,35 @@ namespace CheckTracker
         public DbSet<Stores> Stores { get; set; }
     }
 
+    class DbInitializer : DropCreateDatabaseIfModelChanges<CheckContext>
+                        //DropCreateDatabaseAlways<CheckContext>
+    {
+        protected override void Seed(CheckContext db)
+        {
+            Login l = new Login()
+            {
+                Username = "Administrator",
+                Password = "admin",
+                Date = DateTime.Now
+            };
+            db.Logins.Add(l);
+            db.SaveChanges();
+            l = LoginDAO.FindLogin("Administrator");
+            Employee emp = new Employee()
+            {
+                FName = "Administrator",
+                LName = "Administrator",
+                Type = 'A',
+                Supervisor = null,
+                Store = null,
+                Login = l.id
+            };
+            db.Employees.Add(emp);
+            db.SaveChanges();
+
+            base.Seed(db);
+        }
+    }
 
     public class CheckDAO
     {
@@ -35,7 +69,26 @@ namespace CheckTracker
                 foreach (Check c in result)
                 {
                     //if(c.Status != 'D')
-                        LC.Add(c);
+                    LC.Add(c);
+                }
+                return LC;
+            }
+        }
+
+        public static List<Check> LoadAllCurrentChecks()
+        {
+            using (CheckContext cc = new CheckContext())
+            {
+                List<Check> LC = new List<Check>();
+                var query = from xs in cc.Checks
+                            where xs.Status != 'D' //deleted
+                               && xs.Status != 'P' //paid
+                            select xs;
+                var result = query.ToList();
+                foreach (Check c in result)
+                {
+                    //if(c.Status != 'D')
+                    LC.Add(c);
                 }
                 return LC;
             }
@@ -340,6 +393,21 @@ namespace CheckTracker
             }
         }
 
+        public static Employee FindEmployee(int EmpID)
+        {
+            using(var db = new CheckContext())
+            {
+                List<Employee> le = new List<Employee>();
+                var query = from ae in db.Employees
+                            where ae.id == EmpID
+                            select ae;
+                var results = query.ToList();
+                foreach (Employee e in results)
+                    le.Add(e);
+                return le.First();
+            }
+        }
+
         public static void Update(Employee AE)
         {
             // "server=localhost;database=AddressBook;"
@@ -466,12 +534,16 @@ namespace CheckTracker
         {
             using (var db = new CheckContext())
             {
-                Login login;
                 var query = from l in db.Logins
                             where l.Username == username
-                            group l by l.Date into i
-                            select i.OrderByDescending(t => t.Date).First();
-                login = query.ToList().First();
+                            select l;
+                List<Login> ll = new List<Login>();
+                foreach(Login l in query)
+                {
+                    ll.Add(l);
+                }
+                ll.OrderByDescending(t => t.Date);
+                Login login = ll.FirstOrDefault();
                 return login;
             }
         }

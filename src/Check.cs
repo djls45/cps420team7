@@ -59,9 +59,9 @@ namespace CheckTracker
         public string AccountNum { get; set; }
 
         [Required]
-        public string RoutingNum { get; set; }
-        [ForeignKey("RoutingNum")]
-        public virtual Bank Bank { get; set; }
+        public int Bank { get; set; }
+        [ForeignKey("Bank")]
+        public virtual Bank Banks { get; set; }
 
         [Required]
         public int Owner { get; set; }
@@ -70,7 +70,7 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            string retVal = AccountNum + " : " + RoutingNum + " (" + Passer.FName + " " + Passer.LName + ")";
+            string retVal = AccountNum + " : " + Bank + " (" + Owner + ")";
             return retVal;
         }
     }
@@ -104,7 +104,7 @@ namespace CheckTracker
 
     public class Bank
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         [Required]
         public string RoutingNum { get; set; }
@@ -192,6 +192,8 @@ namespace CheckTracker
         public string Password { get; set; }
         [Required]
         public DateTime Date { get; set; }
+        //[InverseProperty("Logins")]
+        //public Employee Employee { get; set; }
 
         public override string ToString()
         {
