@@ -21,8 +21,8 @@ namespace CheckTracker
 
         public string AmountLong { get; set; }
 
-        [Required]
-        public char Status { get; set; }
+        [Required, MaxLength(1)]
+        public string Status { get; set; }
 
         public int? Address { get; set; }
         [ForeignKey("Address")]
@@ -142,8 +142,8 @@ namespace CheckTracker
         public string FName { get; set; }
         [Required]
         public string LName { get; set; }
-        [Required]
-        public char Type { get; set; }
+        [Required, MaxLength(1)]
+        public string Type { get; set; }
 
         public int? Supervisor { get; set; }
         [ForeignKey("Supervisor")]
@@ -192,8 +192,6 @@ namespace CheckTracker
         public string Password { get; set; }
         [Required]
         public DateTime Date { get; set; }
-        //[InverseProperty("Logins")]
-        //public Employee Employee { get; set; }
 
         public override string ToString()
         {

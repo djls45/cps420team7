@@ -38,15 +38,17 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCreateEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CheckDataGrid = new System.Windows.Forms.DataGridView();
             this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(439, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,7 +98,9 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.updateToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.toolStripMenuItemCreateEmployee,
+            this.changePasswordToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -104,23 +108,37 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.createToolStripMenuItem.Text = "&Create...";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.updateToolStripMenuItem.Text = "&Update...";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.deleteToolStripMenuItem.Text = "&Delete...";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItemCreateEmployee
+            // 
+            this.toolStripMenuItemCreateEmployee.Name = "toolStripMenuItemCreateEmployee";
+            this.toolStripMenuItemCreateEmployee.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItemCreateEmployee.Text = "Create Employee...";
+            this.toolStripMenuItemCreateEmployee.Click += new System.EventHandler(this.toolStripMenuItemCreateEmployee_Click);
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password...";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -137,22 +155,25 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
-            this.splitContainer1.Size = new System.Drawing.Size(744, 259);
+            this.splitContainer1.Panel1.Controls.Add(this.CheckDataGrid);
+            this.splitContainer1.Size = new System.Drawing.Size(439, 259);
             this.splitContainer1.SplitterDistance = 189;
             this.splitContainer1.TabIndex = 1;
             // 
-            // dataGridView2
+            // CheckDataGrid
             // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(744, 189);
-            this.dataGridView2.TabIndex = 1;
+            this.CheckDataGrid.AllowUserToAddRows = false;
+            this.CheckDataGrid.AllowUserToDeleteRows = false;
+            this.CheckDataGrid.AllowUserToOrderColumns = true;
+            this.CheckDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CheckDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CheckDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.CheckDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.CheckDataGrid.Name = "CheckDataGrid";
+            this.CheckDataGrid.ReadOnly = true;
+            this.CheckDataGrid.Size = new System.Drawing.Size(439, 189);
+            this.CheckDataGrid.TabIndex = 1;
+            this.CheckDataGrid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
             // 
             // checksBindingSource
             // 
@@ -162,14 +183,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 283);
+            this.ClientSize = new System.Drawing.Size(439, 283);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CheckTracker";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
@@ -177,7 +199,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,7 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHistoryToolStripMenuItem;
         private System.Windows.Forms.BindingSource checksBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView CheckDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
@@ -206,6 +228,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEnteredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn recipientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imageFileDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCreateEmployee;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }
 

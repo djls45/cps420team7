@@ -11,43 +11,79 @@ namespace CheckTracker
 {
     public partial class CheckDialog : Form
     {
-        public Check Check;
+        public Check check;
+        public Employee employee;
 
         public CheckDialog()
         {
             InitializeComponent();
-            LoadPassers();
-            PasserChoice.SelectedIndex = 0;
-            LoadAddresses();
-            AddressChoice.SelectedIndex = 0;
-            LoadAccounts();
-            AccountChoice.SelectedIndex = 0;
-            Check = new Check();
-            LoadCheckData();
+            SetupComboboxes();
+            check = new Check();
         }
 
         public CheckDialog(Check c)
         {
             InitializeComponent();
+            SetupComboboxes();
+            check = c;
+            LoadCheckData();
+        }
+
+        private void SetupComboboxes()
+        {
             LoadPassers();
             PasserChoice.SelectedIndex = 0;
             LoadAddresses();
             AddressChoice.SelectedIndex = 0;
             LoadAccounts();
             AccountChoice.SelectedIndex = 0;
-            Check = c;
-            LoadCheckData();
+            StatusChoice.SelectedIndex = 0;
         }
 
         private void LoadCheckData()
         {
-            amountBox.Text = Check.Amount.ToString();
-            checkNumBox.Text = Check.CheckNum;
-            LongAmountText.Text = Check.AmountLong;
-            imageFileBox.Text = Check.ImageFile;
-            recipientBox.Text = Check.Recipient;
-
-            //comboboxes...
+            amountBox.Text = check.Amount.ToString();
+            checkNumBox.Text = check.CheckNum;
+            LongAmountText.Text = check.AmountLong;
+            imageFileBox.Text = check.ImageFile;
+            recipientBox.Text = check.Recipient;
+            AccountChoice.SelectedIndex = 0;
+            AddressChoice.SelectedIndex = 0;
+            foreach (Account acct in AccountChoice.Items)
+            {
+                if (acct.id == check.Account)
+                {
+                    AccountChoice.SelectedItem = acct;
+                    break;
+                }
+            }
+            foreach (Address addr in AddressChoice.Items)
+            {
+                if (addr.id == check.Address)
+                {
+                    AddressChoice.SelectedItem = addr;
+                    break;
+                }
+            }
+            switch (check.Status)
+            {
+                case "1":
+                    StatusChoice.SelectedIndex = 0;
+                    break;
+                case "2":
+                    StatusChoice.SelectedIndex = 1;
+                    break;
+                case "3":
+                    StatusChoice.SelectedIndex = 2;
+                    break;
+                case "P":
+                    StatusChoice.SelectedIndex = 3;
+                    break;
+                case "D":
+                    StatusChoice.SelectedIndex = 4;
+                    break;
+                default: break;
+            }
         }
 
         private void LoadPassers()
@@ -94,13 +130,18 @@ namespace CheckTracker
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Check.CheckNum = checkNumBox.Text;
-            Check.Amount = Convert.ToDecimal(amountBox.Text);
-            Check.AmountLong = LongAmountText.Text;
-            Check.Recipient = recipientBox.Text;
-            Check.ImageFile = imageFileBox.Text;
+            check.CheckNum = checkNumBox.Text;
+            check.Amount = Convert.ToDecimal(amountBox.Text);
+            check.AmountLong = LongAmountText.Text;
+            check.Status = ((string)StatusChoice.SelectedItem)[0].ToString();
+            check.Recipient = recipientBox.Text;
+            check.ImageFile = imageFileBox.Text;
 
-            //comboboxes...
+            check.Address = ((Address)AddressChoice.SelectedItem).id;
+            check.Account = ((Account)AccountChoice.SelectedItem).id;
+            check.DateEntered = DateTime.Now;
+
+            check.Employee = employee.id;
 
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();

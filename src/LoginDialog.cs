@@ -20,13 +20,26 @@ namespace CheckTracker
         {
             pwdText.Clear();
             userIdText.Clear();
+            ErrorLabel.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainForm main = new MainForm();
-            this.Hide();
-            main.ShowDialog();
+            Login l = LoginDAO.FindLogin(userIdText.Text);
+            if (l != null && l.Password == pwdText.Text)
+            {
+                ErrorLabel.Hide();
+                MainForm main = new MainForm();
+                main.currentUser = EmployeeDAO.FindEmployee(l.id);
+                main.login = l;
+                main.logindlg = this;
+                this.Hide();
+                main.ShowDialog();
+            }
+            else
+            {
+                ErrorLabel.Show();
+            }
         }
     }
 }

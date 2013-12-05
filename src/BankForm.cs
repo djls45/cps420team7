@@ -53,6 +53,9 @@ namespace CheckTracker
         private void btnSave_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Bank.RoutingNum = RoutingNumBox.Text;
+            Bank.Name = NameBox.Text;
+            Bank.Location = ((Address)AddressChoice.SelectedItem).id;
             this.Close();
         }
 

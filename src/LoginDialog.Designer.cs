@@ -35,6 +35,7 @@
             this.pwdText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pwdText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -88,14 +89,13 @@
             // 
             // pwdText
             // 
-            this.pwdText.Enabled = false;
             this.pwdText.Location = new System.Drawing.Point(120, 36);
             this.pwdText.MaxLength = 255;
             this.pwdText.Name = "pwdText";
             this.pwdText.PasswordChar = '*';
             this.pwdText.Size = new System.Drawing.Size(152, 20);
             this.pwdText.TabIndex = 3;
-            this.pwdText.Text = "************";
+            this.pwdText.Text = "admin";
             // 
             // button1
             // 
@@ -117,11 +117,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLabel.Location = new System.Drawing.Point(12, 9);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(147, 13);
+            this.ErrorLabel.TabIndex = 1;
+            this.ErrorLabel.Text = "Invalid username or password";
+            this.ErrorLabel.Visible = false;
+            // 
             // LoginDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 127);
+            this.ClientSize = new System.Drawing.Size(303, 138);
+            this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LoginDialog";
             this.ShowIcon = false;
@@ -142,5 +154,6 @@
         private System.Windows.Forms.TextBox pwdText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }

@@ -2,44 +2,44 @@
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace CheckTracker
 {
     public partial class MainForm : Form
     {
+        public Employee currentUser;
+        public Login login;
+        public LoginDialog logindlg;
+
         public MainForm()
         {
             InitializeComponent();
+            LoadChecks();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void LoadChecks()
+        {
+            List<Check> LC;
+            LC = CheckDAO.LoadAllCurrentChecks();
+            CheckDataGrid.DataSource = LC;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
             // Load size and location from config file and set form
             this.Size = Properties.Settings.Default.MainFormSize;
             this.Location = Properties.Settings.Default.MainFormLocation;
-
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckDialog cd = new CheckDialog();
+            cd.employee = currentUser;
             if (cd.ShowDialog() == DialogResult.OK)
             {
-                // set all attributes
-
-                Check ch = new Check();
-                ch.DateEntered = DateTime.Now;
-                //ch.Passers = p;
-                //ch.Addresses = adr;
-                //ch.Accounts = act;
-                //ch.Employees = emp;
-                ch.Amount = Convert.ToDecimal(cd.amountBox.Text);
-                ch.Status = '1';
-                ch.Account = ((Account)cd.AccountChoice.SelectedItem).id;
-                ch.Employee = 0;
-                ch.DateEntered = DateTime.Now;
-
-                CheckDAO.Create(ch);
+                CheckDAO.Create(cd.check);
+                LoadChecks();
             }
         }
 
@@ -48,17 +48,33 @@ namespace CheckTracker
             CheckDialog cd = new CheckDialog();
             if (cd.ShowDialog() == DialogResult.OK)
             {
+                Check ch = cd.check;
+                ch.Employee = currentUser.id;
 
+                CheckDAO.Update(ch);
+                LoadChecks();
             }
-
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this record?", 
+            if (MessageBox.Show("Are you sure you want to delete this record?",
                 "Confirm Delete", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
             {
-                //Set record's deleted flag
+                //get selected check entry
+
+                switch (currentUser.Type)
+                {
+                    case "A": // administrator
+                        //delete
+                        break;
+                    case "M": // manager
+                    case "U": // user
+                        //set status to "D"
+                        break;
+                    default: // do nothing
+                        break;
+                }
             }
         }
 
@@ -81,10 +97,36 @@ namespace CheckTracker
             Properties.Settings.Default.MainFormSize = this.Size;
             Properties.Settings.Default.Save();
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            logindlg.Show();
+        }
+
+        private void toolStripMenuItemCreateEmployee_Click(object sender, EventArgs e)
+        {
+            EmployeeForm ef = new EmployeeForm();
+            if (ef.DialogResult == DialogResult.OK)
+            {
+                EmployeeDAO.Create(ef.Employee);
+            }
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginUpdateForm luf = new LoginUpdateForm();
+            luf.login = login;
+            if (luf.DialogResult == DialogResult.OK)
+            {
+                LoginDAO.Create(luf.login);
+            }
+        }
+
+        private void HandleDataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //ignore data errors
+        }
     }
-
-
     
-
 }
 

@@ -87,6 +87,7 @@ namespace CheckTracker
                 }
             }
             LoadAddresses();
+            AddressChoice.SelectedItem = af.Address;
         }
     }
 }

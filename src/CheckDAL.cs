@@ -44,7 +44,7 @@ namespace CheckTracker
             {
                 FName = "Administrator",
                 LName = "Administrator",
-                Type = 'A',
+                Type = "A",
                 Supervisor = null,
                 Store = null,
                 Login = l.id
@@ -81,8 +81,8 @@ namespace CheckTracker
             {
                 List<Check> LC = new List<Check>();
                 var query = from xs in cc.Checks
-                            where xs.Status != 'D' //deleted
-                               && xs.Status != 'P' //paid
+                            where xs.Status != "D" //deleted
+                               && xs.Status != "P" //paid
                             select xs;
                 var result = query.ToList();
                 foreach (Check c in result)
@@ -131,7 +131,7 @@ namespace CheckTracker
         ////////// Accounts //////////
         public static List<Account> LoadAllAccounts()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -151,7 +151,7 @@ namespace CheckTracker
 
         public static void Update(Account AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Account record = db.Accounts.Single(x => x.id == AE.id);
@@ -165,7 +165,7 @@ namespace CheckTracker
 
         public static void Create(Account AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Accounts.Add(AE);
@@ -176,7 +176,7 @@ namespace CheckTracker
 
         public static void Delete(Account AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Account record = db.Accounts.Single(x => x.id == AE.id);
@@ -192,7 +192,7 @@ namespace CheckTracker
         ////////// Addresses //////////
         public static List<Address> LoadAllAddresses()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -212,7 +212,7 @@ namespace CheckTracker
 
         public static void Update(Address AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Address record = db.Addresses.Single(x => x.id == AE.id);
@@ -226,7 +226,7 @@ namespace CheckTracker
 
         public static void Create(Address AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Addresses.Add(AE);
@@ -237,7 +237,7 @@ namespace CheckTracker
 
         public static void Delete(Address AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Address record = db.Addresses.Single(x => x.id == AE.id);
@@ -253,7 +253,7 @@ namespace CheckTracker
         ////////// Banks //////////
         public static List<Bank> LoadAllBanks()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -273,7 +273,7 @@ namespace CheckTracker
 
         public static void Update(Bank AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Bank record = db.Banks.Single(x => x.RoutingNum == AE.RoutingNum);
@@ -287,7 +287,7 @@ namespace CheckTracker
 
         public static void Create(Bank AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Banks.Add(AE);
@@ -298,7 +298,7 @@ namespace CheckTracker
 
         public static void Delete(Bank AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Bank record = db.Banks.Single(x => x.RoutingNum == AE.RoutingNum);
@@ -314,7 +314,7 @@ namespace CheckTracker
         ////////// Configurations //////////
         public static List<Configuration> LoadAllConfigs()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -334,7 +334,7 @@ namespace CheckTracker
 
         public static void Update(Configuration AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Configuration record = db.Configurations.Single(x => x.id == AE.id);
@@ -348,7 +348,7 @@ namespace CheckTracker
 
         public static void Create(Configuration AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Configurations.Add(AE);
@@ -359,7 +359,7 @@ namespace CheckTracker
 
         public static void Delete(Configuration AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Configuration record = db.Configurations.Single(x => x.id == AE.id);
@@ -375,7 +375,7 @@ namespace CheckTracker
         ////////// Employees //////////
         public static List<Employee> LoadAllEmployees()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -410,7 +410,7 @@ namespace CheckTracker
 
         public static void Update(Employee AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Employee record = db.Employees.Single(x => x.id == AE.id);
@@ -424,7 +424,7 @@ namespace CheckTracker
 
         public static void Create(Employee AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Employees.Add(AE);
@@ -435,7 +435,7 @@ namespace CheckTracker
 
         public static void Delete(Employee AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Employee record = db.Employees.Single(x => x.id == AE.id);
@@ -451,7 +451,7 @@ namespace CheckTracker
         ////////// Forms //////////
         public static List<Forms> LoadAllForms()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -471,7 +471,7 @@ namespace CheckTracker
 
         public static void Update(Forms AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Forms record = db.Forms.Single(x => x.id == AE.id);
@@ -485,7 +485,7 @@ namespace CheckTracker
 
         public static void Create(Forms AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Forms.Add(AE);
@@ -496,7 +496,7 @@ namespace CheckTracker
 
         public static void Delete(Forms AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Forms record = db.Forms.Single(x => x.id == AE.id);
@@ -512,7 +512,7 @@ namespace CheckTracker
         ////////// Logins //////////
         public static List<Login> LoadAllLogins()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -538,7 +538,7 @@ namespace CheckTracker
                             where l.Username == username
                             select l;
                 List<Login> ll = new List<Login>();
-                foreach(Login l in query)
+                foreach (Login l in query)
                 {
                     ll.Add(l);
                 }
@@ -548,15 +548,28 @@ namespace CheckTracker
             }
         }
 
+        public static Login FindLogin(int? id)
+        {
+            using (var db = new CheckContext())
+            {
+                var query = from l in db.Logins
+                            where l.id == id
+                            select l;
+                List<Login> ll = new List<Login>();
+                foreach (Login l in query)
+                {
+                    ll.Add(l);
+                }
+                Login login = ll.FirstOrDefault();
+                return login;
+            }
+        }
+
         public static void Update(Login AE)
         {
-            // "server=localhost;database=AddressBook;"
             using (var db = new CheckContext())
             {
                 Login record = db.Logins.Single(x => x.id == AE.id);
-                //AE.Date = DateTime.Now;
-                //AE.id = int.Newint();
-                //db.Logins.Add(AE);
                 record = AE;
                 db.SaveChanges();
                 return;
@@ -565,9 +578,10 @@ namespace CheckTracker
 
         public static void Create(Login AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
+                AE.Date = DateTime.Now;
                 db.Logins.Add(AE);
                 db.SaveChanges();
                 return;
@@ -576,7 +590,7 @@ namespace CheckTracker
 
         public static void Delete(Login AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Login record = db.Logins.Single(x => x.id == AE.id);
@@ -592,7 +606,7 @@ namespace CheckTracker
         ////////// Passers //////////
         public static List<Passer> LoadAllPassers()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -612,7 +626,7 @@ namespace CheckTracker
 
         public static void Update(Passer AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Passer record = db.Passers.Single(x => x.id == AE.id);
@@ -626,7 +640,7 @@ namespace CheckTracker
 
         public static void Create(Passer AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Passers.Add(AE);
@@ -637,7 +651,7 @@ namespace CheckTracker
 
         public static void Delete(Passer AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Passer record = db.Passers.Single(x => x.id == AE.id);
@@ -653,7 +667,7 @@ namespace CheckTracker
         ////////// Stores //////////
         public static List<Stores> LoadAllStores()
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 // Define a LinQ Query
@@ -673,7 +687,7 @@ namespace CheckTracker
 
         public static void Update(Stores AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Stores record = db.Stores.Single(x => x.id == AE.id);
@@ -687,7 +701,7 @@ namespace CheckTracker
 
         public static void Create(Stores AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 db.Stores.Add(AE);
@@ -698,7 +712,7 @@ namespace CheckTracker
 
         public static void Delete(Stores AE)
         {
-            // "server=localhost;database=AddressBook;"
+            
             using (var db = new CheckContext())
             {
                 Stores record = db.Stores.Single(x => x.id == AE.id);

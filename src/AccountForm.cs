@@ -91,6 +91,9 @@ namespace CheckTracker
         private void btnSave_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            Account.AccountNum = AccountBox.Text;
+            Account.Bank = ((Bank)BankChoice.SelectedItem).id;
+            Account.Owner = ((Passer)OwnerChoice.SelectedItem).id;
             this.Close();
         }
 
