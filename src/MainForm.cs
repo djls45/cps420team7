@@ -45,38 +45,59 @@ namespace CheckTracker
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CheckDialog cd = new CheckDialog();
-            if (cd.ShowDialog() == DialogResult.OK)
+            Check ch = (Check)CheckDataGrid.CurrentRow.DataBoundItem;
+            if (ch == null)
             {
-                Check ch = cd.check;
-                ch.Employee = currentUser.id;
+                MessageBox.Show("Please select a row to edit and try again.", 
+                                "No Row Selected", MessageBoxButtons.OK);
+            }
+            else
+            {
+                CheckDialog cd = new CheckDialog(ch);
+                if (cd.ShowDialog() == DialogResult.OK)
+                {
+                    ch = cd.check;
+                    ch.Employee = currentUser.id;
 
-                CheckDAO.Update(ch);
-                LoadChecks();
+                    CheckDAO.Update(ch);
+                    LoadChecks();
+                }
             }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this record?",
-                "Confirm Delete", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+            //get selected check entry
+            Check ch = (Check)CheckDataGrid.CurrentRow.DataBoundItem;
+            if (ch == null)
             {
-                //get selected check entry
-
-                switch (currentUser.Type)
-                {
-                    case "A": // administrator
-                        //delete
-                        break;
-                    case "M": // manager
-                    case "U": // user
-                        //set status to "D"
-                        break;
-                    default: // do nothing
-                        break;
-                }
+                MessageBox.Show("Please select a row to delete and try again.",
+                                "No Row Selected", MessageBoxButtons.OK);
             }
-        }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record?",
+                    "Confirm Delete", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                {
+                    switch (currentUser.Type)
+                    {
+                        case "A": // administrator
+                            //delete
+                            CheckDAO.Delete(ch);
+                            break;
+                        case "M": // manager
+                        case "U": // user
+                            //set status to "D"
+                            ch.Status = "D";
+                            CheckDAO.Update(ch);
+                            break;
+                        default: // do nothing
+                            break;
+                    }//switch
+                    LoadChecks();
+                }//if user wants to delete
+            }//if check exists
+        }//menu item: delete check
 
         private void viewHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -84,20 +105,21 @@ namespace CheckTracker
             history.ShowDialog();
         }
 
-        // When the form location is changed, save to user config file
+        // Save window location to user config file when it is moved on the screen
         private void MainForm_LocationChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.MainFormLocation = this.Location;
             Properties.Settings.Default.Save();
         }
 
-        // When the form size is changed, save to user config file
+        // When the window size is changed, save to user config file
         private void MainForm_SizeChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.MainFormSize = this.Size;
             Properties.Settings.Default.Save();
         }
 
+        //logout
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             logindlg.Show();
@@ -125,6 +147,17 @@ namespace CheckTracker
         private void HandleDataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             //ignore data errors
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string about = "CheckTracker was developed by\n" +
+                            "Jed Schaaf\n" +
+                            "Josiah Rickerd\n" +
+                            "and Jason McVey\n" +
+                            "for CpS 420 - Software Development\n" +
+                            "at Bob Jones Univeristy";
+            MessageBox.Show(about, "About CheckTracker", MessageBoxButtons.OK);
         }
     }
     

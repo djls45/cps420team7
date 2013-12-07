@@ -107,7 +107,7 @@ namespace CheckTracker
         {
             using (CheckContext cc = new CheckContext())
             {
-                Check ch = cc.Checks.Single(x => x.id == c.id);
+                Check ch = cc.Checks.SingleOrDefault(x => x.id == c.id);
                 ch = c;
                 cc.SaveChanges();
             }
@@ -117,7 +117,7 @@ namespace CheckTracker
         {
             using (CheckContext cc = new CheckContext())
             {
-                Check ch = cc.Checks.Single(x => x.id == c.id);
+                Check ch = cc.Checks.SingleOrDefault(x => x.id == c.id);
                 cc.Checks.Remove(ch);
                 cc.SaveChanges();
             }
@@ -154,7 +154,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Account record = db.Accounts.Single(x => x.id == AE.id);
+                Account record = db.Accounts.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -179,7 +179,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Account record = db.Accounts.Single(x => x.id == AE.id);
+                Account record = db.Accounts.SingleOrDefault(x => x.id == AE.id);
                 db.Accounts.Remove(record);
                 db.SaveChanges();
                 return;
@@ -215,7 +215,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Address record = db.Addresses.Single(x => x.id == AE.id);
+                Address record = db.Addresses.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -240,7 +240,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Address record = db.Addresses.Single(x => x.id == AE.id);
+                Address record = db.Addresses.SingleOrDefault(x => x.id == AE.id);
                 db.Addresses.Remove(record);
                 db.SaveChanges();
                 return;
@@ -276,7 +276,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Bank record = db.Banks.Single(x => x.RoutingNum == AE.RoutingNum);
+                Bank record = db.Banks.SingleOrDefault(x => x.RoutingNum == AE.RoutingNum);
                 string id = record.RoutingNum;
                 record = AE;
                 record.RoutingNum = id;
@@ -301,7 +301,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Bank record = db.Banks.Single(x => x.RoutingNum == AE.RoutingNum);
+                Bank record = db.Banks.SingleOrDefault(x => x.RoutingNum == AE.RoutingNum);
                 db.Banks.Remove(record);
                 db.SaveChanges();
                 return;
@@ -337,7 +337,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Configuration record = db.Configurations.Single(x => x.id == AE.id);
+                Configuration record = db.Configurations.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -362,7 +362,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Configuration record = db.Configurations.Single(x => x.id == AE.id);
+                Configuration record = db.Configurations.SingleOrDefault(x => x.id == AE.id);
                 db.Configurations.Remove(record);
                 db.SaveChanges();
                 return;
@@ -413,7 +413,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Employee record = db.Employees.Single(x => x.id == AE.id);
+                Employee record = db.Employees.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -438,7 +438,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Employee record = db.Employees.Single(x => x.id == AE.id);
+                Employee record = db.Employees.SingleOrDefault(x => x.id == AE.id);
                 db.Employees.Remove(record);
                 db.SaveChanges();
                 return;
@@ -474,7 +474,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Forms record = db.Forms.Single(x => x.id == AE.id);
+                Forms record = db.Forms.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -499,7 +499,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Forms record = db.Forms.Single(x => x.id == AE.id);
+                Forms record = db.Forms.SingleOrDefault(x => x.id == AE.id);
                 db.Forms.Remove(record);
                 db.SaveChanges();
                 return;
@@ -569,7 +569,7 @@ namespace CheckTracker
         {
             using (var db = new CheckContext())
             {
-                Login record = db.Logins.Single(x => x.id == AE.id);
+                Login record = db.Logins.SingleOrDefault(x => x.id == AE.id);
                 record = AE;
                 db.SaveChanges();
                 return;
@@ -593,7 +593,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Login record = db.Logins.Single(x => x.id == AE.id);
+                Login record = db.Logins.SingleOrDefault(x => x.id == AE.id);
                 db.Logins.Remove(record);
                 db.SaveChanges();
                 return;
@@ -629,7 +629,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Passer record = db.Passers.Single(x => x.id == AE.id);
+                Passer record = db.Passers.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -654,7 +654,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Passer record = db.Passers.Single(x => x.id == AE.id);
+                Passer record = db.Passers.SingleOrDefault(x => x.id == AE.id);
                 db.Passers.Remove(record);
                 db.SaveChanges();
                 return;
@@ -690,7 +690,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Stores record = db.Stores.Single(x => x.id == AE.id);
+                Stores record = db.Stores.SingleOrDefault(x => x.id == AE.id);
                 int g = record.id;
                 record = AE;
                 record.id = g;
@@ -715,7 +715,7 @@ namespace CheckTracker
             
             using (var db = new CheckContext())
             {
-                Stores record = db.Stores.Single(x => x.id == AE.id);
+                Stores record = db.Stores.SingleOrDefault(x => x.id == AE.id);
                 db.Stores.Remove(record);
                 db.SaveChanges();
                 return;

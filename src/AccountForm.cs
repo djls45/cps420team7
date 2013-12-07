@@ -21,13 +21,28 @@ namespace CheckTracker
             LoadOwners();
         }
 
-        public AccountForm(Account act)
+        public AccountForm(Account acct)
         {
             InitializeComponent();
-            Account = act;
+            Account = acct;
             LoadBanks();
+            for (int i = 1; i < BankChoice.Items.Count; ++i)
+            {
+                if (((Bank)BankChoice.Items[i]).id == Account.Bank)
+                {
+                    BankChoice.SelectedIndex = i;
+                    break;
+                }
+            }
             LoadOwners();
-            AccountBox.Text = Account.AccountNum;
+            for (int i = 1; i < OwnerChoice.Items.Count; ++i)
+            {
+                if (((Passer)OwnerChoice.Items[i]).id == Account.Owner)
+                {
+                    OwnerChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void LoadBanks()
@@ -80,6 +95,14 @@ namespace CheckTracker
                 }
             }
             LoadOwners();
+            for (int i = 1; i < OwnerChoice.Items.Count; ++i)
+            {
+                if (((Passer)OwnerChoice.Items[i]).id == pd.Passer.id)
+                {
+                    OwnerChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -90,7 +113,7 @@ namespace CheckTracker
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            DialogResult = DialogResult.OK;
             Account.AccountNum = AccountBox.Text;
             Account.Bank = ((Bank)BankChoice.SelectedItem).id;
             Account.Owner = ((Passer)OwnerChoice.SelectedItem).id;
@@ -117,6 +140,14 @@ namespace CheckTracker
                 }
             }
             LoadBanks();
+            for (int i = 1; i < BankChoice.Items.Count; ++i)
+            {
+                if (((Bank)BankChoice.Items[i]).id == af.Bank.id)
+                {
+                    BankChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
     }
 }

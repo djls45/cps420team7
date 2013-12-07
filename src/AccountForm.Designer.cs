@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnEditBank = new System.Windows.Forms.Button();
-            this.BankChoice = new System.Windows.Forms.ComboBox();
-            this.AccountBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEditOwner = new System.Windows.Forms.Button();
             this.OwnerChoice = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AccountBox = new System.Windows.Forms.TextBox();
+            this.btnEditBank = new System.Windows.Forms.Button();
+            this.BankChoice = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -54,53 +54,10 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 109);
+            this.groupBox1.Size = new System.Drawing.Size(391, 102);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Information";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(76, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Bank*";
-            // 
-            // btnEditBank
-            // 
-            this.btnEditBank.Location = new System.Drawing.Point(301, 17);
-            this.btnEditBank.Name = "btnEditBank";
-            this.btnEditBank.Size = new System.Drawing.Size(75, 23);
-            this.btnEditBank.TabIndex = 10;
-            this.btnEditBank.Text = "Edit";
-            this.btnEditBank.UseVisualStyleBackColor = true;
-            this.btnEditBank.Click += new System.EventHandler(this.btnEditBank_Click);
-            // 
-            // BankChoice
-            // 
-            this.BankChoice.FormattingEnabled = true;
-            this.BankChoice.Location = new System.Drawing.Point(118, 19);
-            this.BankChoice.Name = "BankChoice";
-            this.BankChoice.Size = new System.Drawing.Size(183, 21);
-            this.BankChoice.TabIndex = 9;
-            // 
-            // AccountBox
-            // 
-            this.AccountBox.Location = new System.Drawing.Point(118, 73);
-            this.AccountBox.Name = "AccountBox";
-            this.AccountBox.Size = new System.Drawing.Size(183, 20);
-            this.AccountBox.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Account Number*";
             // 
             // btnEditOwner
             // 
@@ -129,9 +86,52 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Owner*";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Account Number*";
+            // 
+            // AccountBox
+            // 
+            this.AccountBox.Location = new System.Drawing.Point(118, 73);
+            this.AccountBox.Name = "AccountBox";
+            this.AccountBox.Size = new System.Drawing.Size(183, 20);
+            this.AccountBox.TabIndex = 11;
+            // 
+            // btnEditBank
+            // 
+            this.btnEditBank.Location = new System.Drawing.Point(301, 17);
+            this.btnEditBank.Name = "btnEditBank";
+            this.btnEditBank.Size = new System.Drawing.Size(75, 23);
+            this.btnEditBank.TabIndex = 10;
+            this.btnEditBank.Text = "Edit";
+            this.btnEditBank.UseVisualStyleBackColor = true;
+            this.btnEditBank.Click += new System.EventHandler(this.btnEditBank_Click);
+            // 
+            // BankChoice
+            // 
+            this.BankChoice.FormattingEnabled = true;
+            this.BankChoice.Location = new System.Drawing.Point(118, 19);
+            this.BankChoice.Name = "BankChoice";
+            this.BankChoice.Size = new System.Drawing.Size(183, 21);
+            this.BankChoice.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(76, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Bank*";
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(232, 129);
+            this.btnSave.Location = new System.Drawing.Point(233, 121);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -141,7 +141,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(313, 129);
+            this.btnCancel.Location = new System.Drawing.Point(314, 121);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 168);
+            this.ClientSize = new System.Drawing.Size(421, 159);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);

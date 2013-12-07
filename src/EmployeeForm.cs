@@ -17,9 +17,7 @@ namespace CheckTracker
         {
             InitializeComponent();
             LoadSupervisors();
-            SupervisorChoice.SelectedIndex = 0;
             LoadStores();
-            StoreChoice.SelectedIndex = 0;
             TypeChoice.SelectedIndex = 0;
         }
 
@@ -28,10 +26,24 @@ namespace CheckTracker
             InitializeComponent();
             Employee = e;
             LoadSupervisors();
-            SupervisorChoice.SelectedIndex = 0;
             LoadStores();
-            StoreChoice.SelectedIndex = 0;
             TypeChoice.SelectedIndex = 0;
+            for (int i = 1; i < SupervisorChoice.Items.Count; ++i)
+            {
+                if (((Employee)SupervisorChoice.Items[i]).id == e.Supervisor)
+                {
+                    SupervisorChoice.SelectedIndex = i;
+                    break;
+                }
+            }
+            for (int i = 1; i < StoreChoice.Items.Count; ++i)
+            {
+                if (((Stores)StoreChoice.Items[i]).id == e.Store)
+                {
+                    StoreChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void LoadSupervisors()
@@ -46,6 +58,7 @@ namespace CheckTracker
                 }
             }
             SupervisorChoice.Items.Insert(0, "-- Create New --");
+            SupervisorChoice.SelectedIndex = 0;
         }
 
         private void LoadStores()
@@ -60,6 +73,7 @@ namespace CheckTracker
                 }
             }
             StoreChoice.Items.Insert(0, "-- Create New --");
+            StoreChoice.SelectedIndex = 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -124,6 +138,14 @@ namespace CheckTracker
                 }
             }
             LoadSupervisors();
+            for (int i = 1; i < SupervisorChoice.Items.Count; ++i)
+            {
+                if (((Employee)SupervisorChoice.Items[i]).id == ef.Employee.id)
+                {
+                    SupervisorChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnEditStore_Click(object sender, EventArgs e)
@@ -146,6 +168,14 @@ namespace CheckTracker
                 }
             }
             LoadStores();
+            for (int i = 1; i < StoreChoice.Items.Count; ++i)
+            {
+                if (((Stores)StoreChoice.Items[i]).id == sf.Store.id)
+                {
+                    StoreChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
     }
 }

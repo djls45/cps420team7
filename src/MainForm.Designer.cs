@@ -44,6 +44,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.CheckDataGrid = new System.Windows.Forms.DataGridView();
             this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -142,6 +143,8 @@
             // 
             // helpToolStripMenuItem
             // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -169,8 +172,10 @@
             this.CheckDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.CheckDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.CheckDataGrid.MultiSelect = false;
             this.CheckDataGrid.Name = "CheckDataGrid";
             this.CheckDataGrid.ReadOnly = true;
+            this.CheckDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CheckDataGrid.Size = new System.Drawing.Size(439, 189);
             this.CheckDataGrid.TabIndex = 1;
             this.CheckDataGrid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
@@ -178,6 +183,13 @@
             // checksBindingSource
             // 
             this.checksBindingSource.DataMember = "Checks";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -230,6 +242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn imageFileDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCreateEmployee;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

@@ -26,7 +26,7 @@ namespace CheckTracker
         private void button1_Click(object sender, EventArgs e)
         {
             Login l = LoginDAO.FindLogin(userIdText.Text);
-            if (l != null && l.Password == pwdText.Text)
+            if (l != null && pwdText.Text != null && l.Password == pwdText.Text)
             {
                 ErrorLabel.Hide();
                 MainForm main = new MainForm();

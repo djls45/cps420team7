@@ -38,9 +38,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.amountBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnEditPasser = new System.Windows.Forms.Button();
-            this.PasserChoice = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.AccountChoice = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +61,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(351, 359);
+            this.cancelButton.Location = new System.Drawing.Point(351, 334);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 5;
@@ -74,7 +71,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(270, 359);
+            this.saveButton.Location = new System.Drawing.Point(270, 334);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 4;
@@ -139,9 +136,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnEditPasser);
-            this.groupBox1.Controls.Add(this.PasserChoice);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnEditAccount);
             this.groupBox1.Controls.Add(this.AccountChoice);
             this.groupBox1.Controls.Add(this.label4);
@@ -150,41 +144,14 @@
             this.groupBox1.Controls.Add(this.AddressChoice);
             this.groupBox1.Location = new System.Drawing.Point(16, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 110);
+            this.groupBox1.Size = new System.Drawing.Size(410, 85);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
             // 
-            // btnEditPasser
-            // 
-            this.btnEditPasser.Location = new System.Drawing.Point(329, 16);
-            this.btnEditPasser.Name = "btnEditPasser";
-            this.btnEditPasser.Size = new System.Drawing.Size(75, 23);
-            this.btnEditPasser.TabIndex = 10;
-            this.btnEditPasser.Text = "Edit";
-            this.btnEditPasser.UseVisualStyleBackColor = true;
-            this.btnEditPasser.Click += new System.EventHandler(this.btnEditPasser_Click);
-            // 
-            // PasserChoice
-            // 
-            this.PasserChoice.FormattingEnabled = true;
-            this.PasserChoice.Location = new System.Drawing.Point(91, 18);
-            this.PasserChoice.Name = "PasserChoice";
-            this.PasserChoice.Size = new System.Drawing.Size(238, 21);
-            this.PasserChoice.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Passer*";
-            // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(329, 71);
+            this.btnEditAccount.Location = new System.Drawing.Point(329, 45);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(75, 23);
             this.btnEditAccount.TabIndex = 7;
@@ -195,7 +162,7 @@
             // AccountChoice
             // 
             this.AccountChoice.FormattingEnabled = true;
-            this.AccountChoice.Location = new System.Drawing.Point(91, 73);
+            this.AccountChoice.Location = new System.Drawing.Point(91, 47);
             this.AccountChoice.Name = "AccountChoice";
             this.AccountChoice.Size = new System.Drawing.Size(238, 21);
             this.AccountChoice.TabIndex = 6;
@@ -203,7 +170,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 76);
+            this.label4.Location = new System.Drawing.Point(34, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 5;
@@ -211,7 +178,7 @@
             // 
             // btnEditAddress
             // 
-            this.btnEditAddress.Location = new System.Drawing.Point(329, 43);
+            this.btnEditAddress.Location = new System.Drawing.Point(329, 17);
             this.btnEditAddress.Name = "btnEditAddress";
             this.btnEditAddress.Size = new System.Drawing.Size(75, 23);
             this.btnEditAddress.TabIndex = 4;
@@ -222,7 +189,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 48);
+            this.label3.Location = new System.Drawing.Point(36, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 3;
@@ -231,7 +198,7 @@
             // AddressChoice
             // 
             this.AddressChoice.FormattingEnabled = true;
-            this.AddressChoice.Location = new System.Drawing.Point(91, 45);
+            this.AddressChoice.Location = new System.Drawing.Point(91, 19);
             this.AddressChoice.Name = "AddressChoice";
             this.AddressChoice.Size = new System.Drawing.Size(238, 21);
             this.AddressChoice.TabIndex = 2;
@@ -246,7 +213,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.checkNumBox);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(12, 166);
+            this.groupBox2.Location = new System.Drawing.Point(12, 141);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(414, 99);
             this.groupBox2.TabIndex = 2;
@@ -273,7 +240,7 @@
             // 
             this.groupBox3.Controls.Add(this.browseButton);
             this.groupBox3.Controls.Add(this.imageFileBox);
-            this.groupBox3.Location = new System.Drawing.Point(16, 271);
+            this.groupBox3.Location = new System.Drawing.Point(16, 246);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(264, 82);
             this.groupBox3.TabIndex = 3;
@@ -306,7 +273,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.StatusChoice);
-            this.groupBox4.Location = new System.Drawing.Point(286, 271);
+            this.groupBox4.Location = new System.Drawing.Point(286, 246);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(140, 82);
             this.groupBox4.TabIndex = 6;
@@ -334,7 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(448, 397);
+            this.ClientSize = new System.Drawing.Size(448, 372);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox3);
@@ -378,12 +345,9 @@
         private System.Windows.Forms.Button btnEditAddress;
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnEditPasser;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ComboBox AddressChoice;
         public System.Windows.Forms.ComboBox AccountChoice;
-        public System.Windows.Forms.ComboBox PasserChoice;
         public System.Windows.Forms.TextBox LongAmountText;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ComboBox StatusChoice;

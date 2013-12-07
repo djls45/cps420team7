@@ -27,6 +27,14 @@ namespace CheckTracker
             RoutingNumBox.Text = Bank.RoutingNum;
             NameBox.Text = Bank.Name;
             LoadAddresses();
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == Bank.Location)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void LoadAddresses()
@@ -79,6 +87,14 @@ namespace CheckTracker
                 }
             }
             LoadAddresses();
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == af.Address.id)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
     }
 }

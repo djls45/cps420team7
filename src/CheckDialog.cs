@@ -31,12 +31,8 @@ namespace CheckTracker
 
         private void SetupComboboxes()
         {
-            LoadPassers();
-            PasserChoice.SelectedIndex = 0;
             LoadAddresses();
-            AddressChoice.SelectedIndex = 0;
             LoadAccounts();
-            AccountChoice.SelectedIndex = 0;
             StatusChoice.SelectedIndex = 0;
         }
 
@@ -47,21 +43,19 @@ namespace CheckTracker
             LongAmountText.Text = check.AmountLong;
             imageFileBox.Text = check.ImageFile;
             recipientBox.Text = check.Recipient;
-            AccountChoice.SelectedIndex = 0;
-            AddressChoice.SelectedIndex = 0;
-            foreach (Account acct in AccountChoice.Items)
+            for (int i = 1; i < AccountChoice.Items.Count; ++i)
             {
-                if (acct.id == check.Account)
+                if (((Account)AccountChoice.Items[i]).id == check.Account)
                 {
-                    AccountChoice.SelectedItem = acct;
+                    AccountChoice.SelectedIndex = i;
                     break;
                 }
             }
-            foreach (Address addr in AddressChoice.Items)
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
             {
-                if (addr.id == check.Address)
+                if (((Address)AddressChoice.Items[i]).id == check.Address)
                 {
-                    AddressChoice.SelectedItem = addr;
+                    AddressChoice.SelectedIndex = i;
                     break;
                 }
             }
@@ -86,20 +80,6 @@ namespace CheckTracker
             }
         }
 
-        private void LoadPassers()
-        {
-            List<Passer> LA = PasserDAO.LoadAllPassers();
-            PasserChoice.Items.Clear();
-            if (LA != null)
-            {
-                foreach (Passer a in LA)
-                {
-                    PasserChoice.Items.Add(a);
-                }
-            }
-            PasserChoice.Items.Insert(0, "-- Create New --");
-        }
-
         private void LoadAddresses()
         {
             List<Address> LA = AddressDAO.LoadAllAddresses();
@@ -112,6 +92,7 @@ namespace CheckTracker
                 }
             }
             AddressChoice.Items.Insert(0, "-- Create New --");
+            AddressChoice.SelectedIndex = 0;
         }
 
         private void LoadAccounts()
@@ -126,6 +107,7 @@ namespace CheckTracker
                 }
             }
             AccountChoice.Items.Insert(0, "-- Create New --");
+            AccountChoice.SelectedIndex = 0;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -153,28 +135,6 @@ namespace CheckTracker
             this.Close();
         }
 
-        private void btnEditPasser_Click(object sender, EventArgs e)
-        {
-            PasserDialog pd;
-            if (PasserChoice.SelectedIndex != 0)
-            {
-                pd = new PasserDialog((Passer)PasserChoice.SelectedItem);
-                if (pd.ShowDialog() == DialogResult.OK)
-                {
-                    PasserDAO.Update(pd.Passer);
-                }
-            }
-            else
-            {
-                pd = new PasserDialog();
-                if (pd.ShowDialog() == DialogResult.OK)
-                {
-                    PasserDAO.Create(pd.Passer);
-                }
-            }
-            LoadPassers();
-        }
-
         private void btnEditAddress_Click(object sender, EventArgs e)
         {
             AddressForm af;
@@ -195,6 +155,14 @@ namespace CheckTracker
                 }
             }
             LoadAddresses();
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == af.Address.id)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnEditAccount_Click(object sender, EventArgs e)
@@ -217,6 +185,14 @@ namespace CheckTracker
                 }
             }
             LoadAccounts();
+            for (int i = 1; i < AccountChoice.Items.Count; ++i)
+            {
+                if (((Account)AccountChoice.Items[i]).id == af.Account.id)
+                {
+                    AccountChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
     }

@@ -86,7 +86,14 @@ namespace CheckTracker
                 }
             }
             LoadAddresses();
-            AddressChoice.SelectedItem = af.Address;
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == af.Address.id)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnEditConfig_Click(object sender, EventArgs e)
@@ -109,7 +116,14 @@ namespace CheckTracker
                 }
             }
             LoadConfigurations();
-            ConfigChoice.SelectedItem = af.Config;
+            for (int i = 1; i < ConfigChoice.Items.Count; ++i)
+            {
+                if (((Configuration)ConfigChoice.Items[i]).id == af.Config.id)
+                {
+                    ConfigChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnEditForms_Click(object sender, EventArgs e)
@@ -132,7 +146,14 @@ namespace CheckTracker
                 }
             }
             LoadForms();
-            FormsChoice.SelectedItem = af.FormSet;
+            for (int i = 1; i < FormsChoice.Items.Count; ++i)
+            {
+                if (((Forms)ConfigChoice.Items[i]).id == af.FormSet.id)
+                {
+                    FormsChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)

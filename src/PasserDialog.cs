@@ -50,6 +50,7 @@ namespace CheckTracker
                 }
             }
             AddressChoice.Items.Insert(0, "-- Create New --");
+            AddressChoice.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -87,7 +88,14 @@ namespace CheckTracker
                 }
             }
             LoadAddresses();
-            AddressChoice.SelectedItem = af.Address;
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == af.Address.id)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
     }
 }

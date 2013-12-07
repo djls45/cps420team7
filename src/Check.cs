@@ -16,8 +16,8 @@ namespace CheckTracker
         [StringLength(10)]
         public string CheckNum { get; set; }
 
-        [Required]
-        public decimal Amount;
+        [Required, Column(TypeName = "Money")]
+        public decimal Amount { get; set; }
 
         public string AmountLong { get; set; }
 
@@ -70,7 +70,10 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            string retVal = AccountNum + " : " + Bank + " (" + Owner + ")";
+            string retVal = "";
+            if (AccountNum != null) retVal += AccountNum + " : ";
+            if (Bank != 0) retVal += Bank;
+            if (Owner != null) retVal += " (" + Owner + ")";
             return retVal;
         }
     }
@@ -92,11 +95,12 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            string retVal = Street;
+            string retVal = "";
+            if (!string.IsNullOrEmpty(Street)) retVal += Street;
             if (!string.IsNullOrEmpty(AptNo)) retVal += " " + AptNo;
             if (!string.IsNullOrEmpty(City)) retVal += ", " + City;
             if (!string.IsNullOrEmpty(State)) retVal += ", " + State;
-            retVal += ", " + PostalCode;
+            if (!string.IsNullOrEmpty(PostalCode)) retVal += ", " + PostalCode;
             if (!string.IsNullOrEmpty(Phone)) retVal += " (" + Phone + ")";
             return retVal;
         }
@@ -116,7 +120,9 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            string retVal = Name + " " + RoutingNum;
+            string retVal = "";
+            if (!string.IsNullOrEmpty(Name)) retVal += Name;
+            if (!string.IsNullOrEmpty(RoutingNum)) retVal += " " + RoutingNum;
             return retVal;
         }
     }
@@ -125,12 +131,15 @@ namespace CheckTracker
     {
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
-        [Required]
-        public double FeeAmt { get; set; }
+        [Required, Column(TypeName="Money")]
+        public decimal FeeAmt { get; set; }
         
         public override string ToString()
         {
-            return id.ToString() + ": " + FeeAmt.ToString();
+            string retVal = "";
+            if (id != 0) retVal += id.ToString();
+            if (FeeAmt != 0) retVal += FeeAmt.ToString();
+            return retVal;
         }
     }
 
@@ -159,7 +168,11 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            return LName + ", " + FName + " - " + Type;
+            string retVal = "";
+            if (!string.IsNullOrEmpty(LName)) retVal += LName;
+            if (!string.IsNullOrEmpty(FName)) retVal += ", " + FName;
+            if (!string.IsNullOrEmpty(Type)) retVal += Type;
+            return retVal;
         }
     }
 
@@ -214,7 +227,10 @@ namespace CheckTracker
 
         public override string ToString()
         {
-            return LName + ", " + FName + " - " + id.ToString();
+            string retVal = "";
+            if (!string.IsNullOrEmpty(LName)) retVal += LName;
+            if (!string.IsNullOrEmpty(FName)) retVal += ", " + FName;
+            return retVal;
         }
     }
 
