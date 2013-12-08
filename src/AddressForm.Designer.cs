@@ -68,7 +68,7 @@
             this.aptBox.Location = new System.Drawing.Point(306, 18);
             this.aptBox.Name = "aptBox";
             this.aptBox.Size = new System.Drawing.Size(29, 20);
-            this.aptBox.TabIndex = 38;
+            this.aptBox.TabIndex = 1;
             // 
             // label11
             // 
@@ -76,7 +76,7 @@
             this.label11.Location = new System.Drawing.Point(278, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 13);
-            this.label11.TabIndex = 36;
+            this.label11.TabIndex = 8;
             this.label11.Text = "Apt.";
             // 
             // stateBox
@@ -138,14 +138,14 @@
             this.stateBox.Location = new System.Drawing.Point(268, 45);
             this.stateBox.Name = "stateBox";
             this.stateBox.Size = new System.Drawing.Size(36, 21);
-            this.stateBox.TabIndex = 33;
+            this.stateBox.TabIndex = 3;
             // 
             // postalBox
             // 
             this.postalBox.Location = new System.Drawing.Point(97, 71);
             this.postalBox.Name = "postalBox";
             this.postalBox.Size = new System.Drawing.Size(54, 20);
-            this.postalBox.TabIndex = 35;
+            this.postalBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -153,7 +153,7 @@
             this.label5.Location = new System.Drawing.Point(23, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 34;
+            this.label5.TabIndex = 7;
             this.label5.Text = "Postal Code*";
             // 
             // label3
@@ -162,7 +162,7 @@
             this.label3.Location = new System.Drawing.Point(11, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 29;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Street Address*";
             // 
             // addressBox
@@ -170,7 +170,7 @@
             this.addressBox.Location = new System.Drawing.Point(97, 19);
             this.addressBox.Name = "addressBox";
             this.addressBox.Size = new System.Drawing.Size(166, 20);
-            this.addressBox.TabIndex = 30;
+            this.addressBox.TabIndex = 0;
             // 
             // label4
             // 
@@ -178,7 +178,7 @@
             this.label4.Location = new System.Drawing.Point(63, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 32;
+            this.label4.TabIndex = 6;
             this.label4.Text = "City*";
             // 
             // cityBox
@@ -186,7 +186,7 @@
             this.cityBox.Location = new System.Drawing.Point(97, 45);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(110, 20);
-            this.cityBox.TabIndex = 31;
+            this.cityBox.TabIndex = 2;
             // 
             // label13
             // 
@@ -194,7 +194,7 @@
             this.label13.Location = new System.Drawing.Point(226, 48);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(36, 13);
-            this.label13.TabIndex = 37;
+            this.label13.TabIndex = 9;
             this.label13.Text = "State*";
             // 
             // btnOK

@@ -11,17 +11,22 @@ namespace CheckTracker
 {
     public partial class HistoryForm : Form
     {
+        DateTime from, to;
+        List<Check> LC;
+
         public HistoryForm()
         {
             InitializeComponent();
             List<Check> LC = CheckDAO.LoadAllChecks();
             CheckGridView.DataSource = LC;
+            from = DateTime.Now;
+            to = DateTime.Now;
         }
 
         private void IndexChangedUpdateView(object sender, EventArgs e)
         {
             string option = ((string)StatusBox.SelectedItem);
-            List<Check> LC = CheckDAO.LoadAllChecks();
+            LC = CheckDAO.LoadAllChecks();
             List<Check> chklst = new List<Check>();
             switch (option)
             {
@@ -52,5 +57,21 @@ namespace CheckTracker
         {
             //ignore data errors
         }
+
+        private void selectDatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatePicker dp = new DatePicker(from, to);
+            if (dp.ShowDialog() == DialogResult.OK)
+            {
+                from = dp.from;
+                to = dp.to;
+                foreach (Check c in LC)
+                {
+                    if (c.DateEntered < dp.from || c.DateEntered > dp.to) LC.Remove(c);
+                }
+            }
+        }
+
     }
+
 }

@@ -22,6 +22,28 @@ namespace CheckTracker
         {
             InitializeComponent();
             FormSet = formset;
+            Form1Box.Text = FormSet.Letter1;
+            Form2Box.Text = FormSet.Letter2;
+            Form3Box.Text = FormSet.Letter3;
+            RegsBox.Text = FormSet.Regulations;
+            NoticesBox.Text = FormSet.Notices;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            FormSet.Letter1 = Form1Box.Text;
+            FormSet.Letter2 = Form2Box.Text;
+            FormSet.Letter3 = Form3Box.Text;
+            FormSet.Regulations = RegsBox.Text;
+            FormSet.Notices = NoticesBox.Text;
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

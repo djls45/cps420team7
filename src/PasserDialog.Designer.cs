@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEditAddress = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AddressChoice = new System.Windows.Forms.ComboBox();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEditAddress = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AddressChoice = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -57,44 +57,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Passer Information";
             // 
-            // lastNameBox
-            // 
-            this.lastNameBox.Location = new System.Drawing.Point(274, 19);
-            this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(112, 20);
-            this.lastNameBox.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(206, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Last Name*";
-            // 
-            // firstNameBox
-            // 
-            this.firstNameBox.Location = new System.Drawing.Point(73, 19);
-            this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(112, 20);
-            this.firstNameBox.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "First Name*";
-            // 
             // btnEditAddress
             // 
             this.btnEditAddress.Location = new System.Drawing.Point(311, 43);
             this.btnEditAddress.Name = "btnEditAddress";
             this.btnEditAddress.Size = new System.Drawing.Size(75, 23);
-            this.btnEditAddress.TabIndex = 8;
+            this.btnEditAddress.TabIndex = 3;
             this.btnEditAddress.Text = "Edit";
             this.btnEditAddress.UseVisualStyleBackColor = true;
             this.btnEditAddress.Click += new System.EventHandler(this.btnEditAddress_Click);
@@ -105,7 +73,7 @@
             this.label3.Location = new System.Drawing.Point(18, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Address*";
             // 
             // AddressChoice
@@ -114,7 +82,39 @@
             this.AddressChoice.Location = new System.Drawing.Point(73, 45);
             this.AddressChoice.Name = "AddressChoice";
             this.AddressChoice.Size = new System.Drawing.Size(238, 21);
-            this.AddressChoice.TabIndex = 6;
+            this.AddressChoice.TabIndex = 2;
+            // 
+            // lastNameBox
+            // 
+            this.lastNameBox.Location = new System.Drawing.Point(274, 19);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(112, 20);
+            this.lastNameBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(206, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Last Name*";
+            // 
+            // firstNameBox
+            // 
+            this.firstNameBox.Location = new System.Drawing.Point(73, 19);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.Size = new System.Drawing.Size(112, 20);
+            this.firstNameBox.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "First Name*";
             // 
             // btnSave
             // 

@@ -62,14 +62,14 @@
             this.RoutingNumBox.Location = new System.Drawing.Point(100, 19);
             this.RoutingNumBox.Name = "RoutingNumBox";
             this.RoutingNumBox.Size = new System.Drawing.Size(238, 20);
-            this.RoutingNumBox.TabIndex = 17;
+            this.RoutingNumBox.TabIndex = 0;
             // 
             // NameBox
             // 
             this.NameBox.Location = new System.Drawing.Point(100, 46);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(238, 20);
-            this.NameBox.TabIndex = 16;
+            this.NameBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -77,7 +77,7 @@
             this.label3.Location = new System.Drawing.Point(59, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 15;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Name";
             // 
             // label1
@@ -86,7 +86,7 @@
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 14;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Routing Number*";
             // 
             // btnEditLocation
@@ -94,7 +94,7 @@
             this.btnEditLocation.Location = new System.Drawing.Point(338, 70);
             this.btnEditLocation.Name = "btnEditLocation";
             this.btnEditLocation.Size = new System.Drawing.Size(75, 23);
-            this.btnEditLocation.TabIndex = 13;
+            this.btnEditLocation.TabIndex = 3;
             this.btnEditLocation.Text = "Edit";
             this.btnEditLocation.UseVisualStyleBackColor = true;
             this.btnEditLocation.Click += new System.EventHandler(this.btnEditLocaton_Click);
@@ -105,7 +105,7 @@
             this.AddressChoice.Location = new System.Drawing.Point(100, 72);
             this.AddressChoice.Name = "AddressChoice";
             this.AddressChoice.Size = new System.Drawing.Size(238, 21);
-            this.AddressChoice.TabIndex = 12;
+            this.AddressChoice.TabIndex = 2;
             // 
             // label2
             // 
@@ -113,7 +113,7 @@
             this.label2.Location = new System.Drawing.Point(46, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Location";
             // 
             // btnSave

@@ -35,22 +35,22 @@
             this.viewHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCreateEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.storesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.CheckDataGrid = new System.Windows.Forms.DataGridView();
-            this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CheckDataGrid = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,7 +61,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(439, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(581, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,68 +78,101 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             // 
             // viewHistoryToolStripMenuItem
             // 
             this.viewHistoryToolStripMenuItem.Name = "viewHistoryToolStripMenuItem";
-            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewHistoryToolStripMenuItem.Text = "&View History";
-            this.viewHistoryToolStripMenuItem.Click += new System.EventHandler(this.viewHistoryToolStripMenuItem_Click);
+            this.viewHistoryToolStripMenuItem.Click += new System.EventHandler(this.MenuChecksHistory);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.toolStripMenuItemCreateEmployee,
+            this.checksToolStripMenuItem,
+            this.employeesToolStripMenuItem,
+            this.storesToolStripMenuItem,
             this.changePasswordToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
+            // checksToolStripMenuItem
+            // 
+            this.checksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.checksToolStripMenuItem.Name = "checksToolStripMenuItem";
+            this.checksToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.checksToolStripMenuItem.Text = "Checks";
+            // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.createToolStripMenuItem.Text = "&Create...";
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.MenuCreateCheck);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.updateToolStripMenuItem.Text = "&Update...";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.MenuUpdateCheck);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.deleteToolStripMenuItem.Text = "&Delete...";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.MenuDeleteCheck);
+            // 
+            // employeesToolStripMenuItem
+            // 
+            this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemCreateEmployee});
+            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.employeesToolStripMenuItem.Text = "Employees";
             // 
             // toolStripMenuItemCreateEmployee
             // 
             this.toolStripMenuItemCreateEmployee.Name = "toolStripMenuItemCreateEmployee";
-            this.toolStripMenuItemCreateEmployee.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItemCreateEmployee.Size = new System.Drawing.Size(172, 22);
             this.toolStripMenuItemCreateEmployee.Text = "Create Employee...";
-            this.toolStripMenuItemCreateEmployee.Click += new System.EventHandler(this.toolStripMenuItemCreateEmployee_Click);
+            this.toolStripMenuItemCreateEmployee.Click += new System.EventHandler(this.MenuCreateEmployee);
+            // 
+            // storesToolStripMenuItem
+            // 
+            this.storesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createStoreToolStripMenuItem});
+            this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
+            this.storesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.storesToolStripMenuItem.Text = "Stores";
+            // 
+            // createStoreToolStripMenuItem
+            // 
+            this.createStoreToolStripMenuItem.Name = "createStoreToolStripMenuItem";
+            this.createStoreToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.createStoreToolStripMenuItem.Text = "Create Store...";
+            this.createStoreToolStripMenuItem.Click += new System.EventHandler(this.MenuCreateStore);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password...";
-            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.MenuChangePassword);
             // 
             // helpToolStripMenuItem
             // 
@@ -149,19 +182,16 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
-            // splitContainer1
+            // aboutToolStripMenuItem
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Text = "About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // splitContainer1.Panel1
+            // checksBindingSource
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.CheckDataGrid);
-            this.splitContainer1.Size = new System.Drawing.Size(439, 259);
-            this.splitContainer1.SplitterDistance = 189;
-            this.splitContainer1.TabIndex = 1;
+            this.checksBindingSource.DataMember = "Checks";
             // 
             // CheckDataGrid
             // 
@@ -171,32 +201,21 @@
             this.CheckDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CheckDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.CheckDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.CheckDataGrid.Location = new System.Drawing.Point(0, 24);
             this.CheckDataGrid.MultiSelect = false;
             this.CheckDataGrid.Name = "CheckDataGrid";
             this.CheckDataGrid.ReadOnly = true;
             this.CheckDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CheckDataGrid.Size = new System.Drawing.Size(439, 189);
-            this.CheckDataGrid.TabIndex = 1;
+            this.CheckDataGrid.Size = new System.Drawing.Size(581, 349);
+            this.CheckDataGrid.TabIndex = 2;
             this.CheckDataGrid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
-            // 
-            // checksBindingSource
-            // 
-            this.checksBindingSource.DataMember = "Checks";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About...";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 283);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(581, 373);
+            this.Controls.Add(this.CheckDataGrid);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -208,11 +227,8 @@
             this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,13 +242,8 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewHistoryToolStripMenuItem;
         private System.Windows.Forms.BindingSource checksBindingSource;
-        private System.Windows.Forms.DataGridView CheckDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
@@ -240,9 +251,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEnteredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn recipientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imageFileDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCreateEmployee;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCreateEmployee;
+        private System.Windows.Forms.ToolStripMenuItem storesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createStoreToolStripMenuItem;
+        private System.Windows.Forms.DataGridView CheckDataGrid;
     }
 }
 

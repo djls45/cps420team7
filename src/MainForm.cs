@@ -32,7 +32,7 @@ namespace CheckTracker
             this.Location = Properties.Settings.Default.MainFormLocation;
         }
 
-        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuCreateCheck(object sender, EventArgs e)
         {
             CheckDialog cd = new CheckDialog();
             cd.employee = currentUser;
@@ -43,7 +43,7 @@ namespace CheckTracker
             }
         }
 
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuUpdateCheck(object sender, EventArgs e)
         {
             Check ch = (Check)CheckDataGrid.CurrentRow.DataBoundItem;
             if (ch == null)
@@ -54,18 +54,16 @@ namespace CheckTracker
             else
             {
                 CheckDialog cd = new CheckDialog(ch);
+                cd.employee = currentUser;
                 if (cd.ShowDialog() == DialogResult.OK)
                 {
-                    ch = cd.check;
-                    ch.Employee = currentUser.id;
-
-                    CheckDAO.Update(ch);
+                    CheckDAO.Update(cd.check);
                     LoadChecks();
                 }
             }
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuDeleteCheck(object sender, EventArgs e)
         {
             //get selected check entry
             Check ch = (Check)CheckDataGrid.CurrentRow.DataBoundItem;
@@ -99,7 +97,7 @@ namespace CheckTracker
             }//if check exists
         }//menu item: delete check
 
-        private void viewHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuChecksHistory(object sender, EventArgs e)
         {
             HistoryForm history = new HistoryForm();
             history.ShowDialog();
@@ -125,20 +123,28 @@ namespace CheckTracker
             logindlg.Show();
         }
 
-        private void toolStripMenuItemCreateEmployee_Click(object sender, EventArgs e)
+        private void MenuCreateEmployee(object sender, EventArgs e)
         {
             EmployeeForm ef = new EmployeeForm();
-            if (ef.DialogResult == DialogResult.OK)
+            if (ef.ShowDialog() == DialogResult.OK)
             {
                 EmployeeDAO.Create(ef.Employee);
             }
         }
 
-        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuCreateStore(object sender, EventArgs e)
         {
-            LoginUpdateForm luf = new LoginUpdateForm();
-            luf.login = login;
-            if (luf.DialogResult == DialogResult.OK)
+            StoreForm sf = new StoreForm();
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                StoreDAO.Create(sf.Store);
+            }
+        }
+
+        private void MenuChangePassword(object sender, EventArgs e)
+        {
+            LoginUpdateForm luf = new LoginUpdateForm(login);
+            if (luf.ShowDialog() == DialogResult.OK)
             {
                 LoginDAO.Create(luf.login);
             }
@@ -146,19 +152,26 @@ namespace CheckTracker
 
         private void HandleDataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            //ignore data errors
+            //ignore data errors in table view
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string about = "CheckTracker was developed by\n" +
-                            "Jed Schaaf\n" +
-                            "Josiah Rickerd\n" +
-                            "and Jason McVey\n" +
-                            "for CpS 420 - Software Development\n" +
-                            "at Bob Jones Univeristy";
+            string about = "CheckTracker was developed " +
+                           "in the fall of 2013 by\n\n" +
+                           "\tJed Schaaf\n" +
+                           "\tJosiah Rickerd\n" +
+                           "\tand Jason McVey\n\n" +
+                           "for CpS 420 - Software Development\n" +
+                           "at Bob Jones Univeristy";
             MessageBox.Show(about, "About CheckTracker", MessageBoxButtons.OK);
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
     
 }

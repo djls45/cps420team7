@@ -31,6 +31,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TypeChoice = new System.Windows.Forms.ComboBox();
+            this.Password2Box = new System.Windows.Forms.TextBox();
+            this.Password1Box = new System.Windows.Forms.TextBox();
+            this.UsernameBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnEditStore = new System.Windows.Forms.Button();
+            this.btnEditSupervisor = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.StoreChoice = new System.Windows.Forms.ComboBox();
@@ -40,15 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEditSupervisor = new System.Windows.Forms.Button();
-            this.btnEditStore = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.UsernameBox = new System.Windows.Forms.TextBox();
-            this.Password1Box = new System.Windows.Forms.TextBox();
-            this.Password2Box = new System.Windows.Forms.TextBox();
-            this.TypeChoice = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.btnSave.Location = new System.Drawing.Point(188, 256);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -67,7 +67,7 @@
             this.btnCancel.Location = new System.Drawing.Point(269, 256);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -95,9 +95,89 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(332, 238);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Information";
+            // 
+            // TypeChoice
+            // 
+            this.TypeChoice.FormattingEnabled = true;
+            this.TypeChoice.Items.AddRange(new object[] {
+            "U - User",
+            "M - Manager",
+            "A - Administrator"});
+            this.TypeChoice.Location = new System.Drawing.Point(101, 70);
+            this.TypeChoice.Name = "TypeChoice";
+            this.TypeChoice.Size = new System.Drawing.Size(216, 21);
+            this.TypeChoice.TabIndex = 2;
+            // 
+            // Password2Box
+            // 
+            this.Password2Box.Location = new System.Drawing.Point(101, 149);
+            this.Password2Box.Name = "Password2Box";
+            this.Password2Box.Size = new System.Drawing.Size(216, 20);
+            this.Password2Box.TabIndex = 5;
+            // 
+            // Password1Box
+            // 
+            this.Password1Box.Location = new System.Drawing.Point(101, 123);
+            this.Password1Box.Name = "Password1Box";
+            this.Password1Box.Size = new System.Drawing.Size(216, 20);
+            this.Password1Box.TabIndex = 4;
+            // 
+            // UsernameBox
+            // 
+            this.UsernameBox.Location = new System.Drawing.Point(101, 97);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.Size = new System.Drawing.Size(216, 20);
+            this.UsernameBox.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Retype password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(40, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Username";
+            // 
+            // btnEditStore
+            // 
+            this.btnEditStore.Location = new System.Drawing.Point(242, 200);
+            this.btnEditStore.Name = "btnEditStore";
+            this.btnEditStore.Size = new System.Drawing.Size(75, 23);
+            this.btnEditStore.TabIndex = 9;
+            this.btnEditStore.Text = "Edit...";
+            this.btnEditStore.UseVisualStyleBackColor = true;
+            this.btnEditStore.Click += new System.EventHandler(this.btnEditStore_Click);
+            // 
+            // btnEditSupervisor
+            // 
+            this.btnEditSupervisor.Location = new System.Drawing.Point(242, 173);
+            this.btnEditSupervisor.Name = "btnEditSupervisor";
+            this.btnEditSupervisor.Size = new System.Drawing.Size(75, 23);
+            this.btnEditSupervisor.TabIndex = 7;
+            this.btnEditSupervisor.Text = "Edit...";
+            this.btnEditSupervisor.UseVisualStyleBackColor = true;
+            this.btnEditSupervisor.Click += new System.EventHandler(this.btnEditSupervisor_Click);
             // 
             // label5
             // 
@@ -105,7 +185,7 @@
             this.label5.Location = new System.Drawing.Point(63, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 17;
             this.label5.Text = "Store";
             // 
             // label4
@@ -114,7 +194,7 @@
             this.label4.Location = new System.Drawing.Point(38, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 16;
             this.label4.Text = "Supervisor";
             // 
             // StoreChoice
@@ -123,7 +203,7 @@
             this.StoreChoice.Location = new System.Drawing.Point(101, 202);
             this.StoreChoice.Name = "StoreChoice";
             this.StoreChoice.Size = new System.Drawing.Size(135, 21);
-            this.StoreChoice.TabIndex = 7;
+            this.StoreChoice.TabIndex = 8;
             // 
             // SupervisorChoice
             // 
@@ -138,14 +218,14 @@
             this.LNameBox.Location = new System.Drawing.Point(101, 45);
             this.LNameBox.Name = "LNameBox";
             this.LNameBox.Size = new System.Drawing.Size(216, 20);
-            this.LNameBox.TabIndex = 4;
+            this.LNameBox.TabIndex = 1;
             // 
             // FNameBox
             // 
             this.FNameBox.Location = new System.Drawing.Point(101, 19);
             this.FNameBox.Name = "FNameBox";
             this.FNameBox.Size = new System.Drawing.Size(216, 20);
-            this.FNameBox.TabIndex = 3;
+            this.FNameBox.TabIndex = 0;
             // 
             // label3
             // 
@@ -153,7 +233,7 @@
             this.label3.Location = new System.Drawing.Point(64, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 12;
             this.label3.Text = "Type*";
             // 
             // label2
@@ -162,7 +242,7 @@
             this.label2.Location = new System.Drawing.Point(37, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 11;
             this.label2.Text = "Last Name*";
             // 
             // label1
@@ -171,88 +251,8 @@
             this.label1.Location = new System.Drawing.Point(38, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 10;
             this.label1.Text = "First Name*";
-            // 
-            // btnEditSupervisor
-            // 
-            this.btnEditSupervisor.Location = new System.Drawing.Point(242, 173);
-            this.btnEditSupervisor.Name = "btnEditSupervisor";
-            this.btnEditSupervisor.Size = new System.Drawing.Size(75, 23);
-            this.btnEditSupervisor.TabIndex = 10;
-            this.btnEditSupervisor.Text = "Edit...";
-            this.btnEditSupervisor.UseVisualStyleBackColor = true;
-            this.btnEditSupervisor.Click += new System.EventHandler(this.btnEditSupervisor_Click);
-            // 
-            // btnEditStore
-            // 
-            this.btnEditStore.Location = new System.Drawing.Point(242, 200);
-            this.btnEditStore.Name = "btnEditStore";
-            this.btnEditStore.Size = new System.Drawing.Size(75, 23);
-            this.btnEditStore.TabIndex = 11;
-            this.btnEditStore.Text = "Edit...";
-            this.btnEditStore.UseVisualStyleBackColor = true;
-            this.btnEditStore.Click += new System.EventHandler(this.btnEditStore_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Username";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 126);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Password";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Retype password";
-            // 
-            // UsernameBox
-            // 
-            this.UsernameBox.Location = new System.Drawing.Point(101, 97);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(216, 20);
-            this.UsernameBox.TabIndex = 15;
-            // 
-            // Password1Box
-            // 
-            this.Password1Box.Location = new System.Drawing.Point(101, 123);
-            this.Password1Box.Name = "Password1Box";
-            this.Password1Box.Size = new System.Drawing.Size(216, 20);
-            this.Password1Box.TabIndex = 16;
-            // 
-            // Password2Box
-            // 
-            this.Password2Box.Location = new System.Drawing.Point(101, 149);
-            this.Password2Box.Name = "Password2Box";
-            this.Password2Box.Size = new System.Drawing.Size(216, 20);
-            this.Password2Box.TabIndex = 17;
-            // 
-            // TypeChoice
-            // 
-            this.TypeChoice.FormattingEnabled = true;
-            this.TypeChoice.Items.AddRange(new object[] {
-            "U - User",
-            "M - Manager",
-            "A - Administrator"});
-            this.TypeChoice.Location = new System.Drawing.Point(101, 70);
-            this.TypeChoice.Name = "TypeChoice";
-            this.TypeChoice.Size = new System.Drawing.Size(216, 21);
-            this.TypeChoice.TabIndex = 18;
             // 
             // EmployeeForm
             // 

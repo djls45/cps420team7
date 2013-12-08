@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.UsernameBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.Password2Text = new System.Windows.Forms.TextBox();
             this.Password1Text = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.UsernameBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,19 +55,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Login";
             // 
+            // UsernameBox
+            // 
+            this.UsernameBox.Location = new System.Drawing.Point(101, 19);
+            this.UsernameBox.Name = "UsernameBox";
+            this.UsernameBox.ReadOnly = true;
+            this.UsernameBox.Size = new System.Drawing.Size(189, 20);
+            this.UsernameBox.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(40, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Username";
+            // 
             // Password2Text
             // 
             this.Password2Text.Location = new System.Drawing.Point(101, 71);
             this.Password2Text.Name = "Password2Text";
             this.Password2Text.Size = new System.Drawing.Size(189, 20);
-            this.Password2Text.TabIndex = 3;
+            this.Password2Text.TabIndex = 1;
             // 
             // Password1Text
             // 
             this.Password1Text.Location = new System.Drawing.Point(101, 45);
             this.Password1Text.Name = "Password1Text";
             this.Password1Text.Size = new System.Drawing.Size(189, 20);
-            this.Password1Text.TabIndex = 2;
+            this.Password1Text.TabIndex = 0;
             // 
             // label2
             // 
@@ -75,7 +92,7 @@
             this.label2.Location = new System.Drawing.Point(6, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Retype password";
             // 
             // label1
@@ -84,7 +101,7 @@
             this.label1.Location = new System.Drawing.Point(15, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Enter password";
             // 
             // btnSave
@@ -106,22 +123,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Username";
-            // 
-            // UsernameBox
-            // 
-            this.UsernameBox.Location = new System.Drawing.Point(101, 19);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(189, 20);
-            this.UsernameBox.TabIndex = 5;
             // 
             // LoginUpdateForm
             // 

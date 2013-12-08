@@ -31,25 +31,61 @@ namespace CheckTracker
     {
         protected override void Seed(CheckContext db)
         {
-            Login l = new Login()
+            Login l1 = new Login()
             {
                 Username = "Administrator",
                 Password = "admin",
                 Date = DateTime.Now
             };
-            db.Logins.Add(l);
+            db.Logins.Add(l1);
+            Login l2 = new Login()
+            {
+                Username = "Manager",
+                Password = "manager",
+                Date = DateTime.Now
+            };
+            db.Logins.Add(l2);
+            Login l3 = new Login()
+            {
+                Username = "User",
+                Password = "user",
+                Date = DateTime.Now
+            };
+            db.Logins.Add(l3);
             db.SaveChanges();
-            l = LoginDAO.FindLogin("Administrator");
-            Employee emp = new Employee()
+            l1 = LoginDAO.FindLogin("Administrator");
+            Employee emp1 = new Employee()
             {
                 FName = "Administrator",
                 LName = "Administrator",
                 Type = "A",
                 Supervisor = null,
                 Store = null,
-                Login = l.id
+                Login = l1.id
             };
-            db.Employees.Add(emp);
+            db.Employees.Add(emp1);
+            l2 = LoginDAO.FindLogin("Manager");
+            Employee emp2 = new Employee()
+            {
+                FName = "Manager",
+                LName = "Manager",
+                Type = "M",
+                Supervisor = null,
+                Store = null,
+                Login = l2.id
+            };
+            db.Employees.Add(emp2);
+            l3 = LoginDAO.FindLogin("User");
+            Employee emp3 = new Employee()
+            {
+                FName = "User",
+                LName = "User",
+                Type = "U",
+                Supervisor = null,
+                Store = null,
+                Login = l3.id
+            };
+            db.Employees.Add(emp3);
             db.SaveChanges();
 
             base.Seed(db);

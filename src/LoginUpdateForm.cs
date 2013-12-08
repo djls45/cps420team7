@@ -18,6 +18,13 @@ namespace CheckTracker
             InitializeComponent();
         }
 
+        public LoginUpdateForm(Login lgn)
+        {
+            InitializeComponent();
+            login = lgn;
+            UsernameBox.Text = login.Username;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

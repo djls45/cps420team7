@@ -62,6 +62,7 @@
             this.selectDatesToolStripMenuItem.Name = "selectDatesToolStripMenuItem";
             this.selectDatesToolStripMenuItem.Size = new System.Drawing.Size(91, 23);
             this.selectDatesToolStripMenuItem.Text = "&Select Dates...";
+            this.selectDatesToolStripMenuItem.Click += new System.EventHandler(this.selectDatesToolStripMenuItem_Click);
             // 
             // StatusBox
             // 

@@ -23,5 +23,17 @@ namespace CheckTracker
             InitializeComponent();
             Config = config;
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Config.FeeAmt = FeeAmtSpin.Value;
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

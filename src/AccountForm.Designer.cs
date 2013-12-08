@@ -64,7 +64,7 @@
             this.btnEditOwner.Location = new System.Drawing.Point(301, 44);
             this.btnEditOwner.Name = "btnEditOwner";
             this.btnEditOwner.Size = new System.Drawing.Size(75, 23);
-            this.btnEditOwner.TabIndex = 15;
+            this.btnEditOwner.TabIndex = 3;
             this.btnEditOwner.Text = "Edit";
             this.btnEditOwner.UseVisualStyleBackColor = true;
             this.btnEditOwner.Click += new System.EventHandler(this.btnEditOwner_Click);
@@ -75,7 +75,7 @@
             this.OwnerChoice.Location = new System.Drawing.Point(118, 46);
             this.OwnerChoice.Name = "OwnerChoice";
             this.OwnerChoice.Size = new System.Drawing.Size(183, 21);
-            this.OwnerChoice.TabIndex = 14;
+            this.OwnerChoice.TabIndex = 2;
             // 
             // label2
             // 
@@ -83,7 +83,7 @@
             this.label2.Location = new System.Drawing.Point(70, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 13;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Owner*";
             // 
             // label1
@@ -92,7 +92,7 @@
             this.label1.Location = new System.Drawing.Point(21, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 12;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Account Number*";
             // 
             // AccountBox
@@ -100,14 +100,14 @@
             this.AccountBox.Location = new System.Drawing.Point(118, 73);
             this.AccountBox.Name = "AccountBox";
             this.AccountBox.Size = new System.Drawing.Size(183, 20);
-            this.AccountBox.TabIndex = 11;
+            this.AccountBox.TabIndex = 4;
             // 
             // btnEditBank
             // 
             this.btnEditBank.Location = new System.Drawing.Point(301, 17);
             this.btnEditBank.Name = "btnEditBank";
             this.btnEditBank.Size = new System.Drawing.Size(75, 23);
-            this.btnEditBank.TabIndex = 10;
+            this.btnEditBank.TabIndex = 1;
             this.btnEditBank.Text = "Edit";
             this.btnEditBank.UseVisualStyleBackColor = true;
             this.btnEditBank.Click += new System.EventHandler(this.btnEditBank_Click);
@@ -118,7 +118,7 @@
             this.BankChoice.Location = new System.Drawing.Point(118, 19);
             this.BankChoice.Name = "BankChoice";
             this.BankChoice.Size = new System.Drawing.Size(183, 21);
-            this.BankChoice.TabIndex = 9;
+            this.BankChoice.TabIndex = 0;
             // 
             // label4
             // 
@@ -126,7 +126,7 @@
             this.label4.Location = new System.Drawing.Point(76, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Bank*";
             // 
             // btnSave

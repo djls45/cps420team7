@@ -16,12 +16,42 @@ namespace CheckTracker
         public StoreForm()
         {
             InitializeComponent();
+            LoadAddresses();
+            LoadConfigurations();
+            LoadForms();
         }
 
         public StoreForm(Stores store)
         {
             InitializeComponent();
+            LoadAddresses();
+            LoadConfigurations();
+            LoadForms();
             Store = store;
+            for (int i = 1; i < AddressChoice.Items.Count; ++i)
+            {
+                if (((Address)AddressChoice.Items[i]).id == Store.Location)
+                {
+                    AddressChoice.SelectedIndex = i;
+                    break;
+                }
+            }
+            for (int i = 1; i < ConfigChoice.Items.Count; ++i)
+            {
+                if (((Configuration)ConfigChoice.Items[i]).id == Store.Configuration)
+                {
+                    ConfigChoice.SelectedIndex = i;
+                    break;
+                }
+            }
+            for (int i = 1; i < FormsChoice.Items.Count; ++i)
+            {
+                if (((Forms)ConfigChoice.Items[i]).id == Store.Form)
+                {
+                    FormsChoice.SelectedIndex = i;
+                    break;
+                }
+            }
         }
 
         private void LoadAddresses()
@@ -36,6 +66,7 @@ namespace CheckTracker
                 }
             }
             AddressChoice.Items.Insert(0, "-- Create New --");
+            AddressChoice.SelectedIndex = 0;
         }
 
         private void LoadConfigurations()
@@ -50,6 +81,7 @@ namespace CheckTracker
                 }
             }
             ConfigChoice.Items.Insert(0, "-- Create New --");
+            ConfigChoice.SelectedIndex = 0;
         }
 
         private void LoadForms()
@@ -64,6 +96,7 @@ namespace CheckTracker
                 }
             }
             FormsChoice.Items.Insert(0, "-- Create New --");
+            FormsChoice.SelectedIndex = 0;
         }
 
         private void btnEditAddress_Click(object sender, EventArgs e)
