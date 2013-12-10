@@ -41,6 +41,9 @@ namespace CheckTracker
         [Required]
         public DateTime DateEntered { get; set; }
 
+        [Required]
+        public DateTime DateWritten { get; set; }
+
         public string Recipient { get; set; }
         public string ImageFile { get; set; }
 
@@ -98,10 +101,10 @@ namespace CheckTracker
             string retVal = "";
             if (!string.IsNullOrEmpty(Street)) retVal += Street;
             if (!string.IsNullOrEmpty(AptNo)) retVal += " " + AptNo;
-            if (!string.IsNullOrEmpty(City)) retVal += ", " + City;
+            if (!string.IsNullOrEmpty(City)) retVal += "\n " + City;
             if (!string.IsNullOrEmpty(State)) retVal += ", " + State;
-            if (!string.IsNullOrEmpty(PostalCode)) retVal += ", " + PostalCode;
-            if (!string.IsNullOrEmpty(Phone)) retVal += " (" + Phone + ")";
+            if (!string.IsNullOrEmpty(PostalCode)) retVal += " " + PostalCode;
+            if (!string.IsNullOrEmpty(Phone)) retVal += "\n(" + Phone + ")";
             return retVal;
         }
     }

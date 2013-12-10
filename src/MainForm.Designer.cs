@@ -44,10 +44,17 @@
             this.storesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phase1ChecksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phase2ChecksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.phase3ChecksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CheckDataGrid = new System.Windows.Forms.DataGridView();
+            this.PrintCheckDialog = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckDataGrid)).BeginInit();
@@ -58,6 +65,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.printToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -78,21 +86,21 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             // 
             // viewHistoryToolStripMenuItem
             // 
             this.viewHistoryToolStripMenuItem.Name = "viewHistoryToolStripMenuItem";
-            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.viewHistoryToolStripMenuItem.Text = "&View History";
             this.viewHistoryToolStripMenuItem.Click += new System.EventHandler(this.MenuChecksHistory);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Text = "Log Out/E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -174,6 +182,53 @@
             this.changePasswordToolStripMenuItem.Text = "Change Password...";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.MenuChangePassword);
             // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem,
+            this.phase1ChecksToolStripMenuItem,
+            this.phase2ChecksToolStripMenuItem,
+            this.phase3ChecksToolStripMenuItem,
+            this.selectedToolStripMenuItem});
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.allToolStripMenuItem.Text = "&All...";
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.MenuPrintAllChecks);
+            // 
+            // phase1ChecksToolStripMenuItem
+            // 
+            this.phase1ChecksToolStripMenuItem.Name = "phase1ChecksToolStripMenuItem";
+            this.phase1ChecksToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.phase1ChecksToolStripMenuItem.Text = "Phase &1 Checks...";
+            this.phase1ChecksToolStripMenuItem.Click += new System.EventHandler(this.MenuPrintP1Checks);
+            // 
+            // phase2ChecksToolStripMenuItem
+            // 
+            this.phase2ChecksToolStripMenuItem.Name = "phase2ChecksToolStripMenuItem";
+            this.phase2ChecksToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.phase2ChecksToolStripMenuItem.Text = "Phase &2 Checks...";
+            this.phase2ChecksToolStripMenuItem.Click += new System.EventHandler(this.MenuPrintP2Checks);
+            // 
+            // phase3ChecksToolStripMenuItem
+            // 
+            this.phase3ChecksToolStripMenuItem.Name = "phase3ChecksToolStripMenuItem";
+            this.phase3ChecksToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.phase3ChecksToolStripMenuItem.Text = "Phase &3 Checks...";
+            this.phase3ChecksToolStripMenuItem.Click += new System.EventHandler(this.MenuPrintP3Checks);
+            // 
+            // selectedToolStripMenuItem
+            // 
+            this.selectedToolStripMenuItem.Name = "selectedToolStripMenuItem";
+            this.selectedToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.selectedToolStripMenuItem.Text = "&Selected...";
+            this.selectedToolStripMenuItem.Click += new System.EventHandler(this.MenuPrintSelectedCheck);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -209,6 +264,10 @@
             this.CheckDataGrid.Size = new System.Drawing.Size(581, 349);
             this.CheckDataGrid.TabIndex = 2;
             this.CheckDataGrid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
+            // 
+            // PrintCheckDialog
+            // 
+            this.PrintCheckDialog.UseEXDialog = true;
             // 
             // MainForm
             // 
@@ -262,6 +321,13 @@
         private System.Windows.Forms.ToolStripMenuItem storesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createStoreToolStripMenuItem;
         private System.Windows.Forms.DataGridView CheckDataGrid;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phase1ChecksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phase2ChecksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem phase3ChecksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectedToolStripMenuItem;
+        private System.Windows.Forms.PrintDialog PrintCheckDialog;
+        private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
     }
 }
 

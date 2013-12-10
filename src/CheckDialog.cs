@@ -43,6 +43,7 @@ namespace CheckTracker
             LongAmountText.Text = check.AmountLong;
             imageFileBox.Text = check.ImageFile;
             recipientBox.Text = check.Recipient;
+            CheckDatePicker.Value = check.DateWritten;
             for (int i = 1; i < AccountChoice.Items.Count; ++i)
             {
                 if (((Account)AccountChoice.Items[i]).id == check.Account)
@@ -118,7 +119,7 @@ namespace CheckTracker
             check.Status = ((string)StatusChoice.SelectedItem)[0].ToString();
             check.Recipient = recipientBox.Text;
             check.ImageFile = imageFileBox.Text;
-
+            check.DateWritten = CheckDatePicker.Value;
             check.Address = ((Address)AddressChoice.SelectedItem).id;
             check.Account = ((Account)AccountChoice.SelectedItem).id;
             check.DateEntered = DateTime.Now;

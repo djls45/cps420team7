@@ -32,6 +32,7 @@ namespace CheckTracker
             cityBox.Text = Address.City;
             stateBox.Text = Address.State;
             postalBox.Text = Address.PostalCode;
+            PhoneBox.Text = Address.Phone;
             return base.ShowDialog();
         }
 
@@ -42,6 +43,7 @@ namespace CheckTracker
             Address.City = cityBox.Text;
             Address.State = stateBox.Text;
             Address.PostalCode = postalBox.Text;
+            Address.Phone = PhoneBox.Text;
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }

@@ -64,6 +64,53 @@ namespace CheckTracker
                 Login = l1.id
             };
             db.Employees.Add(emp1);
+
+            Forms set = new Forms()
+            {
+                Letter1 = "{{ADDRESS}}\n\n{{DATE}}\n\n{{FNAME}} {{LNAME}}:\n\n" +
+"Check number {{CHECKNUM}} written for the amount of ${{AMOUNT}} on your account at {{BANK}} bounced on {{CHECKDATE}}. There has been a ${{FEEAMT}} collection fee added to the required payment. Please bring a cash payment of {{AMOUNT+FEE}} in to {{STORE}} to cover the check.\n\n" +
+"{{MANAGER}}\n{{STORE}}",
+                Letter2 = "{{ADDRESS}}\n\n{{DATE}}\n\n{{FNAME}} {{LNAME}}:\n\n" +
+"WARNING: THIS IS YOUR TWO-WEEK NOTICE.\n\n" +
+"Payment for check number {{CHECKNUM}} written on {{CHECKDATE}} for the amount of ${{AMOUNT}} on account {{ACCOUNT}} at {{BANK}} was rejected and a fee of ${{FEEAMT}} was assessed to your account. Please bring a cash payment to the amount of ${{AMOUNT+FEE}} to {{STORE}} to cover the check payment.\n\n" +
+"{{MANAGER}}\n{{STORE}}",
+                Letter3 = "{{ADDRESS}}\n\n{{DATE}}\n\n{{FNAME}} {{LNAME}}:\n\n" +
+"Unfortunately, since we have received insufficient payment to cover your check (check number {{CHECKNUM}} on account {{ACCOUNT}} at {{BANK}} for ${{AMOUNT}}), we have initiated court proceedings to collect the amount of the check plus a legal collection fee of ${{FEEAMT}}. You will also receive a court notice with the date, time, and location of the hearing.\n\n" +
+"{{MANAGER}}\n{{STORE}}",
+                Regulations = "",
+                Notices = ""
+            };
+            db.Forms.Add(set);
+            Configuration config = new Configuration()
+            {
+                FeeAmt = 25.00m
+            };
+            db.Configurations.Add(config);
+            Address addr = new Address()
+            {
+                Street = "123 Easy St",
+                AptNo = "A",
+                City = "Anywhere",
+                State = "AK",
+                Country = "USA",
+                PostalCode = "12345",
+                Phone = "(234)567-8910"
+            };
+            db.Addresses.Add(addr);
+            db.SaveChanges();
+            set = FormsDAO.LoadAllForms().First();
+            config = ConfigDAO.LoadAllConfigs().First();
+            addr = AddressDAO.LoadAllAddresses().First();
+            Stores store = new Stores()
+            {
+                Name = "Test Store",
+                Form = set.id,
+                Configuration = config.id,
+                Location = addr.id
+            };
+            db.Stores.Add(store);
+            db.SaveChanges();
+            store = StoreDAO.LoadAllStores().Find(x => x.Name == "Test Store");
             l2 = LoginDAO.FindLogin("Manager");
             Employee emp2 = new Employee()
             {
@@ -71,23 +118,25 @@ namespace CheckTracker
                 LName = "Manager",
                 Type = "M",
                 Supervisor = null,
-                Store = null,
+                Store = store.id,
                 Login = l2.id
             };
             db.Employees.Add(emp2);
+            db.SaveChanges();
+            emp2 = EmployeeDAO.LoadAllEmployees().Find(x => x.LName == "Manager");
             l3 = LoginDAO.FindLogin("User");
             Employee emp3 = new Employee()
             {
                 FName = "User",
                 LName = "User",
                 Type = "U",
-                Supervisor = null,
-                Store = null,
+                Supervisor = emp2.id,
+                Store = store.id,
                 Login = l3.id
             };
             db.Employees.Add(emp3);
             db.SaveChanges();
-
+            
             base.Seed(db);
         }
     }

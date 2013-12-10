@@ -85,7 +85,7 @@
             this.userIdText.Name = "userIdText";
             this.userIdText.Size = new System.Drawing.Size(152, 20);
             this.userIdText.TabIndex = 0;
-            this.userIdText.Text = "Administrator";
+            this.userIdText.Text = "Manager";
             // 
             // pwdText
             // 
@@ -95,7 +95,7 @@
             this.pwdText.PasswordChar = '*';
             this.pwdText.Size = new System.Drawing.Size(152, 20);
             this.pwdText.TabIndex = 1;
-            this.pwdText.Text = "admin";
+            this.pwdText.Text = "manager";
             // 
             // button1
             // 

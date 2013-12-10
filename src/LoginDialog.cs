@@ -30,7 +30,8 @@ namespace CheckTracker
             {
                 ErrorLabel.Hide();
                 MainForm main = new MainForm();
-                main.currentUser = EmployeeDAO.FindEmployee(l.id);
+                main.currentUser = EmployeeDAO.LoadAllEmployees().Find(emp => emp.Login == l.id);
+                    //EmployeeDAO.FindEmployee(l.id);
                 main.login = l;
                 main.logindlg = this;
                 this.Hide();
