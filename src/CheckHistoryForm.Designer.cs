@@ -88,7 +88,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HistoryForm";
             this.ShowIcon = false;
-            this.Text = "CheckHistoryForm";
+            this.Text = "Check History Form";
             ((System.ComponentModel.ISupportInitialize)(this.CheckGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -191,7 +191,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "StoreForm";
-            this.Text = "StoreForm";
+            this.ShowIcon = false;
+            this.Text = "Store Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

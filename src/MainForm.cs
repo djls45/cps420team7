@@ -47,8 +47,8 @@ namespace CheckTracker
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Load size and location from config file and set form
-            this.Size = Properties.Settings.Default.MainFormSize;
-            this.Location = Properties.Settings.Default.MainFormLocation;
+            //this.Size = Properties.Settings.Default.MainFormSize;
+            //this.Location = Properties.Settings.Default.MainFormLocation;
 
             LoadChecks();
             CheckDataGrid.AutoResizeColumns();
@@ -126,7 +126,7 @@ namespace CheckTracker
         }
 
         // Save window location to user config file when it is moved on the screen
-        private void MainForm_LocationChanged(object sender, EventArgs e)
+        /*private void MainForm_LocationChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.MainFormLocation = this.Location;
             Properties.Settings.Default.Save();
@@ -137,7 +137,7 @@ namespace CheckTracker
         {
             Properties.Settings.Default.MainFormSize = this.Size;
             Properties.Settings.Default.Save();
-        }
+        }*/
 
         //logout
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

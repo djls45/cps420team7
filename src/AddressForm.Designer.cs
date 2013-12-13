@@ -246,7 +246,8 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox1);
             this.Name = "AddressForm";
-            this.Text = "AddressForm";
+            this.ShowIcon = false;
+            this.Text = "Address Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

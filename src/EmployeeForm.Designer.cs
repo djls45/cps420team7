@@ -263,7 +263,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Name = "EmployeeForm";
-            this.Text = "EmployeeForm";
+            this.ShowIcon = false;
+            this.Text = "Employee Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
