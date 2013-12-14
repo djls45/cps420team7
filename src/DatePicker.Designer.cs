@@ -103,7 +103,7 @@
             this.Controls.Add(this.okButton);
             this.Name = "DatePicker";
             this.ShowIcon = false;
-            this.Text = "DatePicker";
+            this.Text = "Date Picker";
             this.ResumeLayout(false);
             this.PerformLayout();
 

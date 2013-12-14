@@ -170,7 +170,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormsForm";
-            this.Text = "FormsForm";
+            this.ShowIcon = false;
+            this.Text = "Forms Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -145,7 +145,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "PasserDialog";
-            this.Text = "PasserDialog";
+            this.ShowIcon = false;
+            this.Text = "Passer Dialog";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

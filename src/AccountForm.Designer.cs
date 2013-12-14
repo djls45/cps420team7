@@ -158,7 +158,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "AccountForm";
-            this.Text = "AccountForm";
+            this.ShowIcon = false;
+            this.Text = "Account Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

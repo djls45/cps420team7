@@ -133,7 +133,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "LoginUpdateForm";
-            this.Text = "LoginUpdateForm";
+            this.ShowIcon = false;
+            this.Text = "Update Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

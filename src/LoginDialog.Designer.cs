@@ -137,7 +137,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LoginDialog";
             this.ShowIcon = false;
-            this.Text = "LoginDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login Dialog";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -94,7 +94,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "ConfigForm";
-            this.Text = "ConfigForm";
+            this.ShowIcon = false;
+            this.Text = "Config Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FeeAmtSpin)).EndInit();
