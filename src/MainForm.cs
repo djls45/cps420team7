@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Drawing.Printing;
 
 namespace CheckTracker
 {
@@ -14,6 +15,9 @@ namespace CheckTracker
         public LoginDialog logindlg;
         private PrintDocument printDoc;
         private string FormLetter;
+        private List<Check> LC;
+        private CheckList BLC;
+        private SortOrder[] orders;
 
         public MainForm()
         {
@@ -24,7 +28,6 @@ namespace CheckTracker
 
         private void LoadChecks()
         {
-            List<Check> LC;
             if (currentUser != null)
             {
                 switch (currentUser.Type)
@@ -40,7 +43,13 @@ namespace CheckTracker
                         LC = new List<Check>();
                         break;
                 }
-                CheckDataGrid.DataSource = LC;
+                BLC = new CheckList(LC);
+                CheckDataGrid.DataSource = BLC;
+                orders = new SortOrder[CheckDataGrid.Columns.Count];
+                for(int i = 0; i < CheckDataGrid.Columns.Count; ++i)
+                {
+                    orders[i] = SortOrder.None;
+                }
             }
         }
 
@@ -394,6 +403,42 @@ namespace CheckTracker
 
             // Check to see if more pages are to be printed.
             e.HasMorePages = (FormLetter.Length > 0);
+        }
+
+        private void DataGridHeaderClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            //get the current column details
+            
+            string strColumnName = CheckDataGrid.Columns[e.ColumnIndex].Name;
+            if (CheckDataGrid.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection == SortOrder.None ||
+                CheckDataGrid.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection == SortOrder.Descending)
+            {
+                orders[e.ColumnIndex] = SortOrder.Ascending;
+            }
+            else
+            {
+                orders[e.ColumnIndex] = SortOrder.Descending;
+            }
+
+            LC.Sort(new CheckComparer(strColumnName, orders[e.ColumnIndex]));
+            CheckDataGrid.DataSource = null;
+            BLC = new CheckList(LC);
+            CheckDataGrid.DataSource = BLC;
+            CheckDataGrid.Columns[e.ColumnIndex].HeaderCell.SortGlyphDirection = orders[e.ColumnIndex];
+
+
+            if (orders[e.ColumnIndex] == SortOrder.Descending ||
+                orders[e.ColumnIndex] == SortOrder.None)
+            {
+                CheckDataGrid.Sort(CheckDataGrid.Columns[e.ColumnIndex], 
+                    System.ComponentModel.ListSortDirection.Ascending);
+            }
+            else
+            {
+                CheckDataGrid.Sort(CheckDataGrid.Columns[e.ColumnIndex], 
+                    System.ComponentModel.ListSortDirection.Descending);
+            }
         }
 
     }//class MainForm

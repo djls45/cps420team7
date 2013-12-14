@@ -68,7 +68,7 @@ namespace CheckTracker
             Forms set = new Forms()
             {
                 Letter1 = "{{ADDRESS}}\n\n{{DATE}}\n\n{{FNAME}} {{LNAME}}:\n\n" +
-"Check number {{CHECKNUM}} written for the amount of ${{AMOUNT}} on your account at {{BANK}} bounced on {{CHECKDATE}}. There has been a ${{FEEAMT}} collection fee added to the required payment. Please bring a cash payment of {{AMOUNT+FEE}} in to {{STORE}} to cover the check.\n\n" +
+"Check number {{CHECKNUM}} written for the amount of ${{AMOUNT}} on your account at {{BANK}} bounced on {{CHECKDATE}}. There has been a ${{FEEAMT}} collection fee added to the required payment. Please bring a cash payment of ${{AMOUNT+FEE}} in to {{STORE}} to cover the check.\n\n" +
 "{{MANAGER}}\n{{STORE}}",
                 Letter2 = "{{ADDRESS}}\n\n{{DATE}}\n\n{{FNAME}} {{LNAME}}:\n\n" +
 "WARNING: THIS IS YOUR TWO-WEEK NOTICE.\n\n" +

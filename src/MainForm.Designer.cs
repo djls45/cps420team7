@@ -263,6 +263,7 @@
             this.CheckDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CheckDataGrid.Size = new System.Drawing.Size(581, 349);
             this.CheckDataGrid.TabIndex = 2;
+            this.CheckDataGrid.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridHeaderClick);
             this.CheckDataGrid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
             // 
             // PrintCheckDialog

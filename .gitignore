@@ -1,10 +1,4 @@
 
-src/[Bb]in/*
-[Bb]in/*
-src/[Oo]bj/*
-[Oo]bj/*
-src/CheckTracker.csproj.user
-src/CheckTracker.suo
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio

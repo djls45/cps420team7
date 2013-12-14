@@ -44,6 +44,7 @@
             this.CheckGridView.Name = "CheckGridView";
             this.CheckGridView.Size = new System.Drawing.Size(344, 235);
             this.CheckGridView.TabIndex = 0;
+            this.CheckGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GridViewHeaderClick);
             this.CheckGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.HandleDataError);
             // 
             // menuStrip1

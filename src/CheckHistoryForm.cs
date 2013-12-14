@@ -11,14 +11,21 @@ namespace CheckTracker
 {
     public partial class HistoryForm : Form
     {
-        DateTime from, to;
-        List<Check> LC;
+        private DateTime from, to;
+        private List<Check> LC;
+        private SortOrder[] orders;
 
         public HistoryForm()
         {
             InitializeComponent();
-            List<Check> LC = CheckDAO.LoadAllChecks();
-            CheckGridView.DataSource = LC;
+            LC = CheckDAO.LoadAllChecks();
+            CheckList CL = new CheckList(LC);
+            CheckGridView.DataSource = CL;
+            orders = new SortOrder[CheckGridView.Columns.Count];
+            for (int i = 0; i < CheckGridView.Columns.Count; ++i)
+            {
+                orders[i] = SortOrder.None;
+            }
             from = DateTime.Now;
             to = DateTime.Now;
         }
@@ -69,6 +76,23 @@ namespace CheckTracker
                 {
                     if (c.DateEntered < dp.from || c.DateEntered > dp.to) LC.Remove(c);
                 }
+            }
+        }
+
+        private void GridViewHeaderClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (orders[e.ColumnIndex] == SortOrder.Descending ||
+                orders[e.ColumnIndex]  == SortOrder.None)
+            {
+                CheckGridView.Sort(CheckGridView.Columns[e.ColumnIndex], 
+                    System.ComponentModel.ListSortDirection.Ascending);
+                orders[e.ColumnIndex] = SortOrder.Ascending;
+            }
+            else
+            {
+                CheckGridView.Sort(CheckGridView.Columns[e.ColumnIndex], 
+                    System.ComponentModel.ListSortDirection.Descending);
+                orders[e.ColumnIndex] = SortOrder.Descending;
             }
         }
 

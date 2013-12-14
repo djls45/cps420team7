@@ -98,6 +98,7 @@
     <Compile Include="CheckHistoryForm.designer.cs">
       <DependentUpon>CheckHistoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckList.cs" />
     <Compile Include="ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
