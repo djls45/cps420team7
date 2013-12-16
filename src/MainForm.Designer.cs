@@ -36,13 +36,13 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEditCheckCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEditCheckUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEditCheckDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemCreateEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEditEmployeesCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.storesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEditStoresCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,20 +86,20 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "&Open...";
             // 
             // viewHistoryToolStripMenuItem
             // 
             this.viewHistoryToolStripMenuItem.Name = "viewHistoryToolStripMenuItem";
-            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.viewHistoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewHistoryToolStripMenuItem.Text = "&View History";
             this.viewHistoryToolStripMenuItem.Click += new System.EventHandler(this.MenuChecksHistory);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Log Out/E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -117,63 +117,63 @@
             // checksToolStripMenuItem
             // 
             this.checksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem,
-            this.updateToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.MenuEditCheckCreate,
+            this.MenuEditCheckUpdate,
+            this.MenuEditCheckDelete});
             this.checksToolStripMenuItem.Name = "checksToolStripMenuItem";
             this.checksToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.checksToolStripMenuItem.Text = "Checks";
             // 
-            // createToolStripMenuItem
+            // MenuEditCheckCreate
             // 
-            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.createToolStripMenuItem.Text = "&Create...";
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.MenuCreateCheck);
+            this.MenuEditCheckCreate.Name = "MenuEditCheckCreate";
+            this.MenuEditCheckCreate.Size = new System.Drawing.Size(152, 22);
+            this.MenuEditCheckCreate.Text = "&Create...";
+            this.MenuEditCheckCreate.Click += new System.EventHandler(this.MenuCreateCheck);
             // 
-            // updateToolStripMenuItem
+            // MenuEditCheckUpdate
             // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.updateToolStripMenuItem.Text = "&Update...";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.MenuUpdateCheck);
+            this.MenuEditCheckUpdate.Name = "MenuEditCheckUpdate";
+            this.MenuEditCheckUpdate.Size = new System.Drawing.Size(152, 22);
+            this.MenuEditCheckUpdate.Text = "&Update...";
+            this.MenuEditCheckUpdate.Click += new System.EventHandler(this.MenuUpdateCheck);
             // 
-            // deleteToolStripMenuItem
+            // MenuEditCheckDelete
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.deleteToolStripMenuItem.Text = "&Delete...";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.MenuDeleteCheck);
+            this.MenuEditCheckDelete.Name = "MenuEditCheckDelete";
+            this.MenuEditCheckDelete.Size = new System.Drawing.Size(152, 22);
+            this.MenuEditCheckDelete.Text = "&Delete...";
+            this.MenuEditCheckDelete.Click += new System.EventHandler(this.MenuDeleteCheck);
             // 
             // employeesToolStripMenuItem
             // 
             this.employeesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemCreateEmployee});
+            this.MenuEditEmployeesCreate});
             this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
             this.employeesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.employeesToolStripMenuItem.Text = "Employees";
             // 
-            // toolStripMenuItemCreateEmployee
+            // MenuEditEmployeesCreate
             // 
-            this.toolStripMenuItemCreateEmployee.Name = "toolStripMenuItemCreateEmployee";
-            this.toolStripMenuItemCreateEmployee.Size = new System.Drawing.Size(172, 22);
-            this.toolStripMenuItemCreateEmployee.Text = "Create Employee...";
-            this.toolStripMenuItemCreateEmployee.Click += new System.EventHandler(this.MenuCreateEmployee);
+            this.MenuEditEmployeesCreate.Name = "MenuEditEmployeesCreate";
+            this.MenuEditEmployeesCreate.Size = new System.Drawing.Size(172, 22);
+            this.MenuEditEmployeesCreate.Text = "Create Employee...";
+            this.MenuEditEmployeesCreate.Click += new System.EventHandler(this.MenuCreateEmployee);
             // 
             // storesToolStripMenuItem
             // 
             this.storesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createStoreToolStripMenuItem});
+            this.MenuEditStoresCreate});
             this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
             this.storesToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.storesToolStripMenuItem.Text = "Stores";
             // 
-            // createStoreToolStripMenuItem
+            // MenuEditStoresCreate
             // 
-            this.createStoreToolStripMenuItem.Name = "createStoreToolStripMenuItem";
-            this.createStoreToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.createStoreToolStripMenuItem.Text = "Create Store...";
-            this.createStoreToolStripMenuItem.Click += new System.EventHandler(this.MenuCreateStore);
+            this.MenuEditStoresCreate.Name = "MenuEditStoresCreate";
+            this.MenuEditStoresCreate.Size = new System.Drawing.Size(152, 22);
+            this.MenuEditStoresCreate.Text = "Create Store...";
+            this.MenuEditStoresCreate.Click += new System.EventHandler(this.MenuCreateStore);
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -240,7 +240,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -313,13 +313,13 @@
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditCheckCreate;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditCheckUpdate;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditCheckDelete;
         private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCreateEmployee;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditEmployeesCreate;
         private System.Windows.Forms.ToolStripMenuItem storesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createStoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuEditStoresCreate;
         private System.Windows.Forms.DataGridView CheckDataGrid;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phase1ChecksToolStripMenuItem;

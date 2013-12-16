@@ -59,6 +59,33 @@ namespace CheckTracker
             //this.Size = Properties.Settings.Default.MainFormSize;
             //this.Location = Properties.Settings.Default.MainFormLocation;
 
+            switch (currentUser.Type)
+            {
+                case "A": // administrator
+                    MenuEditCheckCreate.Enabled = true;
+                    MenuEditCheckUpdate.Enabled = true;
+                    MenuEditCheckDelete.Enabled = true;
+                    MenuEditEmployeesCreate.Enabled = true;
+                    MenuEditStoresCreate.Enabled = true;
+                    break;
+                case "M": // manager
+                    MenuEditCheckCreate.Enabled = true;
+                    MenuEditCheckUpdate.Enabled = true;
+                    MenuEditCheckDelete.Enabled = true;
+                    MenuEditEmployeesCreate.Enabled = true;
+                    MenuEditStoresCreate.Enabled = false;
+                    break;
+                case "U": // user
+                    MenuEditCheckCreate.Enabled = true;
+                    MenuEditCheckUpdate.Enabled = false;
+                    MenuEditCheckDelete.Enabled = false;
+                    MenuEditEmployeesCreate.Enabled = false;
+                    MenuEditStoresCreate.Enabled = false;
+                    break;
+                default: // do nothing
+                    break;
+            }
+
             LoadChecks();
             CheckDataGrid.AutoResizeColumns();
         }
@@ -439,6 +466,7 @@ namespace CheckTracker
                 CheckDataGrid.Sort(CheckDataGrid.Columns[e.ColumnIndex], 
                     System.ComponentModel.ListSortDirection.Descending);
             }
+            CheckDataGrid.AutoResizeColumns();
         }
 
     }//class MainForm
