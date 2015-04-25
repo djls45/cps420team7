@@ -1,0 +1,1 @@
+This is for a program to track bad checks for a company. The program is for class CpS420.
